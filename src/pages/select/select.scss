@@ -1,0 +1,91 @@
+page-select {
+	.content {
+		background: #f1f1f1;
+		background-repeat: repeat;
+		background-image: none;
+		background-size: auto;
+		background-image: url('../assets/imgs/seen/back.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.logo {
+		text-align: center;
+		margin: 20px;
+		img{
+		   width:140px;
+		}
+	}
+	.selct_div {
+		h3 {
+		font-size: 15px;
+		margin: 0;
+	    }
+	}
+
+
+	.btn_cont {
+     	background-image: linear-gradient(to right, #7551ce 0%, #9f00ff 100%);
+	}
+
+	
+	.selct_div {
+	    position: relative;
+		.tik_img {
+			position: absolute;
+			top: 10px;
+			width: 30px;
+			right: 10px;
+		}
+    }
+	
+	// .videoWrapper1:before {
+	// 	content: "a";
+	// 	width: 100%;
+	// 	position: absolute;
+	// 	background: transparent;
+	// 	height: 70px;
+	// 	z-index: +111;
+	// }
+
+
+
+
+	.videoWrapper1 {
+		position: relative;
+	  }
+	  .videoWrapper1::before {
+		content: "";
+		background: transparent;
+		position: absolute;
+		width: 30%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	  }
+	  .videoWrapper1::after {
+		content: "";
+		background: transparent;
+		position: absolute;
+		width: 30%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		bottom: auto;
+	  }
+	  .over {
+		position: absolute;
+		top: 0;
+		height: 35%;
+		width: 100%;
+		bottom: auto;
+		background: transparent;
+	  }
+	  .over-bottom {
+		position: absolute;
+		bottom: 0;
+		height: 35%;
+		width: 100%;
+		top: auto;
+		background: transparent;
+	  }
+}

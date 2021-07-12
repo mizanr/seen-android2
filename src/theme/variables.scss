@@ -1,0 +1,140 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: rtl;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #000,
+  secondary:  #f1f1f1,
+  danger:     #f53d3d,
+  light:      #0000,
+  dark:       #222,
+  purple:      #9f00ff,
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+
+// @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);
+
+// $font-family-base:'Source Sans Pro', sans-serif !default;
+// $font-family-md-base: 'Source Sans Pro', sans-serif;
+// $font-family-ios-base: 'Source Sans Pro', sans-serif;
+// $font-family-wp-base: 'Source Sans Pro', sans-serif;      
+
+// h1,h2,h3,h4,h5{
+//   font-weight: 600 !important;
+// }
+
+
+
+
+
+//@font-face {
+  //font-family: 'nunito-regular';
+ // src: url('../assets/fonts/font/Nunito-Regular.ttf') format('truetype');
+//}
+
+//@font-face {
+//  font-family: 'Nunito-SemiBold';
+//  src: url('../assets/fonts/font/Nunito-SemiBold.ttf') format('truetype');
+//}
+
+//@font-face {
+//  font-family: 'Nunito-ExtraBold';
+  //src: url('../assets/fonts/font/Nunito-ExtraBold.ttf') format('truetype');
+//}
+
+//@font-face {
+ // font-family: 'Nunito-Bold';
+ // src: url('../assets/fonts/font/Nunito-Bold.ttf') format('truetype');
+//}
+
+//$font-family-base:'nunito-regular';
+
+//.body{
+ // font-family: 'nunito-regular' !important;
+  // font-weight: normal !important;
+//}
+//h1, h2, h3, h4, h6{
+  //font-family: 'Nunito-ExtraBold' !important;
+  // font-weight: 500 !important;
+//}
+//.segment-button{
+ // font-family: 'Nunito-ExtraBold' !important;
+  // font-weight: 500 !important;
+//}

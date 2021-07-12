@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>قائمة الطلاب</ion-title>
+        <ion-buttons start>
+            <button (click)="viewCtrl.dismiss()" ion-button icon-only clear>
+<ion-icon slot="start" name="close"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item *ngFor="let item of students">
+        <ion-avatar item-start>
+            <img [src]="item.profile" alt="">
+        </ion-avatar>
+        <p>{{item.full_name}} </p>
+        <p>اشراء بواسطة {{item.created_at}}</p>
+        <p>الدفع بواسطة {{item.payment_type}}</p>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,42 @@
+page-membership {
+	.back_img {
+		background: #e1e1e1;
+	}
+.plan {
+	-webkit-box-shadow: 0 0px 3px #919191;
+	box-shadow: 0 0px 3px #919191;
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	margin-top: 45px;
+	margin-bottom: 70px;
+	background-color: #fff;
+}
+.cicle {
+	background: #ff9703;
+	width: 100px;
+	padding: 35px 0 0px 0px;
+	font-size: 20px;
+	color: #fff;
+	border-radius: 50%;
+	height: 100px;
+	margin: -60px auto 0;
+}
+.plan h5 {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 0px 10px 0;
+}
+.plan p {
+    font-size: 20px;
+    color: #ff9703;
+    font-weight: bold;
+    margin: 10px;
+}
+.choose {
+	border-radius: 0;
+	padding: 8px 10px !important;
+	line-height: 13px !important;
+	height: 30px;
+}
+}

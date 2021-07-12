@@ -1,0 +1,120 @@
+<ion-content padding>
+  <div class="login_form">
+    <button
+      ion-button
+      icon-only
+      (click)="veiwCtrl.dismiss()"
+      small
+      clear
+      class="btn_close"
+    >
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <ion-list no-lines>
+      <h3 class="heading">أضف مسابقة</h3>
+    </ion-list>
+    <label class="label_name">عنوان الاختبار</label>
+    <ion-item class="input_1" no-padding>
+      <input ion-input
+        type="text"
+       
+        placeholder="أدخل عنوان الاختبار" [(ngModel)]="quiz_title"
+      />
+    </ion-item>
+
+    <label class="label_name">اعادة ارسال محتوى الاختبار</label>
+    <ion-item class="input_1" no-padding>
+      <input ion-input
+      pattern="[۰-۹]*"
+        type="number"       
+        placeholder="ادخل محتوى الاختبار" [(ngModel)]="quiz_count"
+      />
+    </ion-item>
+
+    <ion-list style="position:relative" *ngFor="let item of question; let i = index">
+      <br />
+      <button
+        *ngIf="question.length > 1"
+        ion-button
+        small
+        clear
+        class="closebutton"
+        icon-only
+        (click)="removeC(i)"
+      >
+        <ion-icon color="light" name="close"></ion-icon>
+      </button>
+      <label class="label_name">سؤال {{ i + 1 }}</label>
+      <ion-item class="input_1" no-padding>
+        <!-- <input type="text" placeholder="Question" /> -->
+        <textarea
+          type="text"
+          placeholder="سؤال"
+          class="question"
+          [(ngModel)]="item.title"
+        ></textarea>
+      </ion-item>
+
+      <div style="position:relative" *ngFor="let k of item.choices; let chind = index">
+          <button
+          *ngIf="item.choices.length > 2"
+          ion-button
+          small
+          clear
+          class="choiceRm"
+          icon-only
+          (click)="removeO(chind,i)"
+        >
+          <ion-icon color="light" name="close"></ion-icon>
+        </button>
+        <label class="label_name">خيار {{ chind + 1 }}</label>
+        <ion-item class="input_1" no-padding>
+          <input ion-input
+            type="text"
+            (input)="onChoiseChange(item.choices, item)"
+            placeholder="ادخل الاختيار" [(ngModel)]="k.value"
+          />
+        </ion-item>
+      </div>
+      <!-- (input)="onChoiseChange(item.choices, item)" -->
+      <!-- <label class="label_name">Second choose</label>
+      <ion-item class="input_1" no-padding>
+        <input type="text" placeholder="Choise Second" />
+      </ion-item> -->
+
+      <button
+        (click)="addchoices(i,item)"
+        ion-button
+        small
+        class="btn_cont btn_cont_1 btn_cont_12"
+      >
+      اضافة اختيارات اكثر
+      </button>
+
+      <div *ngIf="item.show" >
+        <label style="display: block;" class="label_name">الجواب الصحيح</label>
+        <ion-item class="input_1" no-padding>
+          <ion-select [(ngModel)]="item.answer" placeholder="اختار الجواب" okText="نعم" cancelText="إلغاء">
+            <ion-option *ngFor="let t of item.choices">{{ t.value }}</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div text-right>
+        <button
+          style="background: #9f00ff;"
+          ion-button
+          small
+          (click)="addquestion(item)"
+        >
+        اضافة سؤال جديد
+        </button>
+      </div>
+    </ion-list>
+
+    <button ion-button block class="btn_cont btn_cont_1" (click)="addQuiz()">
+      متابعة
+    </button>
+  </div>
+</ion-content>

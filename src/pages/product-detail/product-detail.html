@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ProductDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-buttons start>
+			  <button ion-button clear icon-only style="margin:0px 10px;">
+		  <img src="assets/imgs/header/logo.png" height="30">
+		</button>
+  </ion-buttons>
+  <ion-title>PRODUCTS</ion-title>
+  <!-- <ion-buttons end>
+    <button ion-button (click)="notify()">
+    <img src="assets/imgs/home/notification.png" height="15">
+    </button>
+  </ion-buttons> -->
+  <ion-buttons end>
+    <button ion-button (click)="profile()">
+    <img src="assets/imgs/profile-user.png" height="22">
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content>
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image"/>
+    </ion-slide>
+   
+  </ion-slides>
+
+  <div class="flexbox">
+    <div class="img_div" *ngFor="let k of [1,2,3,4,5,6]">
+      <img src="assets/imgs/product.png">
+    </div>
+  </div>
+
+  <ion-item no-lines class="item_head" style="padding: 0 16px;">
+    <h3 style="font-weight: 500;">Product Name</h3>
+  </ion-item>
+
+
+  <div class="price" *ngFor="let k of [1,2,3]">
+    <!-- <div class="flex_box">
+      <div class="f1"><b>+</b></div>
+      <div class="f2"><b>1</b></div>
+      <div class="f1"><b>-</b></div>
+    </div> -->
+    <span >20L-bottle</span>
+
+    <span class="rate" style="margin: 0;"><b>250€/L</b></span>
+  </div>
+
+<div padding class="btns">
+
+<!-- <button ion-button color="primary" outline style="background-color: #fff;">1L Bottle - Price XEUR</button>
+<button ion-button color="light">20L - Price YEUR</button>
+<button ion-button color="light">60L - Price ZEUR</button>
+<button ion-button color="light">100L - Price WEUR</button> -->
+
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+</div>
+
+<!-- <ion-item no-lines class="">
+  <h3 item-start style="font-weight: 500;">Toatal</h3>
+  <h3 text-center style="color: #cb1a34; font-weight: 600;">1X1</h3>
+  <h3 item-end style="font-weight: 500;">$250</h3>
+</ion-item> -->
+
+</ion-content>

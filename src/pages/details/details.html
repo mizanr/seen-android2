@@ -1,0 +1,187 @@
+<ion-content>
+  <div *ngIf="courseDetail" class="bx_box bx_box_course">
+    <img style="height: 250px;object-fit: cover;" [src]="courseDetail.course_image" />
+    <p style="font-size: 16px;font-weight: bold;font-size: larger;">
+      {{ courseDetail.course_title }}
+    </p>
+    <div class="top_back">
+      <ion-item no-lines>
+        <button ion-button small icon-only clear item-start class="" (click)="back()">
+          <img src="assets/imgs/seen/back-icon.png" style="width: 8px" />
+        </button>
+        <button *ngIf="auth.getUserDetails()?.user_type == 1" item-end icon-only clear
+          style="background: transparent;margin: 0;" (click)="presentActionSheet()">
+          <ion-icon name="md-more" color="secondary"></ion-icon>
+        </button>
+
+      </ion-item>
+    </div>
+
+    <div class="box_course">
+      <ion-row no-padding item-align-center>
+        <ion-col col-8 no-padding>
+          <h5 (click)="profile()">
+            <img src="assets/imgs/seen/user.png" /> &nbsp;&nbsp;{{ courseDetail.teacher_name }}
+          </h5>
+        </ion-col>
+        <ion-col col-4 text-right no-padding>
+          <h3 class="price">{{ courseDetail.price }}</h3>
+        </ion-col>
+      </ion-row>
+
+      <ion-row align-items-center>
+        <ion-col col-4>
+          <span class="levelSpan">
+            <ion-icon style="color: #bababa;font-size: 20px;" name="md-list"></ion-icon> &nbsp;{{ courseDetail.cate_name }}
+          </span>
+        </ion-col>
+        <ion-col col-4>
+          <span class="levelSpan">
+            <ion-icon style="color: #bababa;font-size: 20px;margin-right: 3px;" name="md-podium"></ion-icon>
+            &nbsp;{{courseDetail.level_name}}
+          </span>
+        </ion-col>
+        <ion-col col-4 text-right>
+          <h5 style="color: #989797;font-size: 15px;justify-content: flex-end;">
+            <img src="assets/imgs/seen/time.png" /> &nbsp;{{ courseDetail.duration }} الساعات
+          </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding: 10px 0;" align-items-center>
+        <ion-col col-6 no-padding text-left>
+          <span class="star">
+            <img src="assets/imgs/seen/star0.png" />
+            <span class="badge">0</span>
+          </span>
+        </ion-col>
+        <ion-col col-6 no-padding text-left>
+          <button ion-button small no-margin color="" class="btn_cont" style="font-weight: 500;"
+            (click)="openEnrolled()">الطلاب المشتركين ({{courseDetail.student.length}})</button>
+        </ion-col>
+      </ion-row>
+
+      <!-- <button ion-button clear small no-padding no-margin style="color: #a404fa;font-weight: 500;" (click)="openEnrolled()">Course Bought BY({{courseDetail.student.length}})</button> -->
+
+      <div *ngIf="courseDetail.youtube_link" class="videoWrapper">
+
+        <iframe *ngIf="courseDetail.youtube_link" width="100%" height="160" style="border: none;" allowfullscreen
+          [src]="youtubeUrl"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+        <!-- <div>
+                  <embed
+                      [src]="youtubeUrl"
+                      wmode="transparent"
+                      type="video/mp4"
+                      width="100%" height="220px"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      allowfullscreen="true"
+                      title="Keyboard Cat"
+                  >
+                </div> -->
+
+        <div class="over"></div>
+      </div>
+
+      <div [innerHTML]="courseDetail.course_description"></div>
+      <!-- <ion-row no-padding>
+        <ion-col col-8 no-padding>
+          <h5 style="color: #989797;font-size: 15px;">
+            <img src="assets/imgs/seen/time.png" />{{ courseDetail.duration }}
+            mins
+          </h5>
+        </ion-col>
+        <ion-col col-4 no-padding text-right>
+          <button ion-button small class="btn_cont" (click)="payment()">
+            Add Lesson
+          </button>
+        </ion-col>
+      </ion-row> -->
+      <!-- <p no-margin>Category: {{ courseDetail.cate_name }}</p>
+      <p no-margin>Level: {{ courseDetail.level_name }}</p> -->
+    </div>
+  </div>
+
+  <hr />
+  <h3 class="heading" padding-horizontal>
+    محتوى الدورة
+    <button *ngIf="auth.getUserDetails()?.user_type == 1" (click)="addlesson()" small class="btn_cont" ion-button>
+      اضافة درس
+    </button>
+
+    <div *ngIf="auth.getUserDetails()?.user_type == 2">
+      <button *ngIf="courseDetail?.is_purchased == 0" small class="btn_cont" ion-button (click)="startBuy()">
+        اشترك الان
+      </button>
+      <button *ngIf="courseDetail?.is_purchased == 1" small disabled style="opacity:1" class="btn_cont" ion-button>
+        تم شتراك بالفعل
+      </button>
+    </div>
+  </h3>
+
+
+
+
+
+
+  <div>
+    <div class="noDatadiv" *ngIf="courseDetail?.chapter?.length == 0">
+      <ion-icon name="ios-search-outline"></ion-icon>
+      <p>لم يتم العثور على شيء!</p>
+    </div>
+    <ion-card *ngFor="let item of courseDetail?.chapter; let i = index" color="" (click)="active = i + 1"
+      [ngClass]="active == i + 1 ? 'active' : ''">
+      <ion-card-header no-padding>
+        <ion-item class="item_head">
+          {{ item.title }}
+          <span item-end>
+            <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+          </span>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content class="content_2" no-padding>
+        <ion-item *ngFor="let items of item.lesson;let lsI = index" class="price price_1" style="padding:0 16px;"
+          (click)="coursepage(items,i+lsI)">
+          <h3 class="lession_count">
+            <img src="assets/imgs/seen/lession_arrow.png" /> &nbsp;&nbsp;{{ items.lession_name }}
+          </h3>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- <div *ngIf="auth.getUserDetails()?.user_type == 2 && courseDetail.is_purchased==0">
+      <div class="noDatadiv" *ngIf="courseDetail?.chapter?.length == 0">
+          <ion-icon name="ios-search-outline"></ion-icon>
+          <p>لم يتم العثور على شيء!</p>
+        </div>
+      <ion-card
+        color=""
+        (click)="active = 1"
+        [ngClass]="active ==1 ? 'active' : ''"
+      >
+        <ion-card-header no-padding>
+          <ion-item class="item_head">
+            {{ courseDetail?.chapter[0].title }}
+            <span item-end>
+              <ion-icon name="ios-arrow-forward-outline"></ion-icon
+            ></span>
+          </ion-item>
+        </ion-card-header>
+  
+        <ion-card-content class="content_2" no-padding>
+          <ion-item
+            class="price price_1"
+            style="padding:0 16px;"
+          >
+            <h3
+            (click)="coursepage(courseDetail?.chapter[0].lesson[0])" class="lession_count">
+              <img src="assets/imgs/seen/lession_arrow.png" />
+              {{ courseDetail?.chapter[0].lesson[0].lession_name }}
+            </h3>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div> -->
+</ion-content>

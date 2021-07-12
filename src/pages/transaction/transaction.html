@@ -1,0 +1,35 @@
+<!--
+  Generated template for the TransactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="light">
+  <ion-title>Transaction</ion-title>
+  <ion-buttons end>
+    <!-- <button ion-button clear icon-only style="margin:0px 10px;" >
+      <img src="assets/imgs/home/notification.png" height="16">
+    </button> -->
+  </ion-buttons>
+
+  </ion-navbar>
+  </ion-header>
+<ion-content padding>
+
+	<!-- <div class="wallet">
+		<p>Your Balance</p>
+		<h2>8500$</h2>
+	</div> -->
+
+
+	<h3 class="heading" style="font-size: 20px;">Transaction History</h3>
+
+	<ion-item no-padding *ngFor = " let k of [1,2,3,4]" class="list_2" margin-bottom>
+		<p>16-01-2021</p>
+		<p class="color_change">Build skills with courses from top universities like Yale</p>
+		<h3>250</h3>
+		<p class="rate">Enrolled Student 20</p>
+	</ion-item>
+
+</ion-content>

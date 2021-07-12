@@ -1,0 +1,24 @@
+page-news-detail {
+    .back p {
+        font-size: 13px;
+        line-height: 22px;
+        margin-top: 0;
+    }
+    .item_new{
+        h3 {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+        }
+        .label {
+            margin: 0 !important;
+        }
+        p {
+            margin: 0 !important;
+            font-size: 13px;
+            color: #000;
+        }
+        .item_new {
+            min-height: 0;
+        }
+    }
+}

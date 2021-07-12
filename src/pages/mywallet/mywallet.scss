@@ -1,0 +1,66 @@
+page-mywallet {
+    .content {
+        background: #fff;
+        background-repeat: repeat;
+        background-image: none;
+        background-size: auto;
+        background-image: url('../assets/imgs/seen/back2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+.toolbar-title {
+    text-align: center;
+    color:#000 !important;
+}
+.title {
+    padding: 0 10px !important;
+} 
+.toolbar-background {
+    border-color: rgba(255, 255, 255, 0) !important;
+}
+.wallet {
+	text-align: center;
+	background: #9f00ff;
+	padding: 20px;
+	border-radius: 4px;
+	color: #fff;
+	h2 {
+	margin: 0;
+	font-size: 40px;
+	}
+	p {
+		margin: 0 0 10px;
+		font-size: 15px;
+		font-weight: 600;
+	}
+	}
+
+.rate {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 13px !important;
+    color: #000 !important;
+}
+.list_2{
+	h3 {
+	color: #05c920;
+	font-size: 20px !important;
+	font-weight: 600 !important;
+	margin: 5px 0 10px;
+}
+.color_change {
+	color: #9f00ff !important;
+}
+p{
+	color:#000;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.list_2 {
+	background: #0000;
+}
+}
+
+}

@@ -1,0 +1,151 @@
+page-teacherprofile {
+  .content {
+    background: #fff;
+    background-repeat: repeat;
+    background-image: none;
+    background-size: auto;
+    background-image: url("../assets/imgs/seen/back2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  input::placeholder {
+    color: #000;
+    opacity: 1;
+  }
+  .logo p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .input_1.item {
+    //background-color: #00000054;
+    //margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 22px;
+    margin-top: 0;
+    background: transparent;
+  }
+
+  .logo h3 {
+    color: #d21c21;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  .img_sign img {
+    width: 35px;
+    margin: 10px;
+  }
+  .logo img {
+    width: 160px;
+  }
+  .logo {
+    padding: 20px;
+    text-align: center;
+  }
+  .label_name {
+    // color: #999;
+    font-size: 16px;
+    margin: 0;
+  }
+  .input_1 {
+    margin: 10px 0;
+    height: 35px;
+    color: #000;
+    font-size: 15px;
+  }
+
+  .input_2 {
+    // margin: 10px 0;
+    //  height: 35px;
+    color: #000;
+    font-size: 15px;
+    background: transparent;
+  }
+
+  .btn_grp {
+    padding: 10px 0 !important;
+    text-align: center;
+    font-size: 15px;
+  }
+  .btn_grp button {
+    font-weight: normal;
+    font-size: 20px;
+  }
+  .btn_grp p {
+    color: #000;
+    margin-top: 50px;
+  }
+  .btn_grp p span {
+    color: #7551ce;
+    font-weight: bold;
+  }
+  .toolbar-background.toolbar-background-ios {
+    background: #fff;
+    border: none;
+  }
+  .header-md::after,
+  .tabs-md[tabsPlacement="top"] > .tabbar::after,
+  .footer-md::before,
+  .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: "";
+  }
+  .label input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+  }
+  .login_form {
+    margin: 0 30px 50px;
+  }
+  .label {
+    display: flex;
+    align-items: center;
+  }
+  .label img {
+    width: auto;
+    height: 20px;
+    margin-right: 8px;
+  }
+  .login_form {
+    // padding-top: 30%;
+  }
+  .input_11 {
+    background: transparent;
+    .label.label-ios {
+      color: #000;
+    }
+    span {
+      color: #fff;
+    }
+  }
+  .img_sign img {
+    width: 200px;
+    margin: 10px;
+  }
+  .list {
+    margin: 0 0px;
+  }
+  .toolbar-title {
+    color: #000 !important;
+  }
+
+  .toolbar-ios-light .toolbar-background-ios {
+    background: #0000;
+  }
+  .profile {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #cecece;
+  }
+}

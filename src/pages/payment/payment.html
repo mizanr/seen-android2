@@ -1,0 +1,48 @@
+
+<ion-content padding>
+  
+
+
+  <div class="login_form">
+
+    <button ion-button icon-only (click)="closemodal()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <ion-list no-lines>
+
+      <h3 class="heading">Payment gateway</h3>
+
+    </ion-list>
+
+    <ion-list radio-group [(ngModel)]="relationship">
+
+    	<ion-item no-lines class="top_item">
+    		<ion-label>Local Service 199+10</ion-label>
+    		<ion-radio value="friends" checked item-start></ion-radio>
+    	</ion-item>
+
+
+    	<ion-item no-lines>
+    		<ion-label>Promo code</ion-label>
+    		<ion-radio value="family" item-start></ion-radio>
+            <button ion-button small item-end (click)="promocode()">Order the Code</button>
+    	</ion-item>
+
+    	<ion-row no-padding>
+    		<ion-col col-9>
+    	<ion-input placeholder="" item-start style="border: 1px solid #e1e1e1;border-radius: 10px;padding: 0 16px;"></ion-input>
+    </ion-col>
+<ion-col col-3>
+    	<button ion-button small class="btn_cont btn_pay" item-end>Apply</button>
+    </ion-col>
+    	</ion-row>
+
+    </ion-list>
+
+
+    <button ion-button block class="btn_cont btn_cont_1" (click)="closemodal()">Continue</button>
+
+
+</div>
+</ion-content>

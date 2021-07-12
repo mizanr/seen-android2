@@ -1,0 +1,124 @@
+<!--
+  Generated template for the CourseSidebarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div *ngIf="course"  class="login_form">
+    <h3 class="heading" (click)="go_cource_detail();$event.stopPropagation()">{{ course.course_title }}</h3>
+
+    <button
+      ion-button
+      icon-only
+      (click)="closemodal()"
+      small
+      clear
+      class="btn_close"
+    >
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <ion-card
+      color=""
+      *ngFor="let item of course.chapter;let i=index"       
+      [ngClass]="active == i+1 ? 'active' : ''"
+    >
+      <ion-card-header no-padding>
+        <ion-item class="item_head" (click)="change_chapter($event,item,i);$event.stopPropagation()">
+         {{item.title}}
+          <span item-end (click)="active_event($event,i);$event.stopPropagation()"> <ion-icon name="ios-arrow-down"></ion-icon></span>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content class="content_2">
+        <ion-list>
+            <!-- radio-group -->
+          <ion-item (click)="changeLesson(k,i+lessonI)"  *ngFor="let k of item.lesson;let lessonI=index"  no-padding no-lines>
+            <ion-label>{{k.lession_name}}</ion-label>
+            <!-- <ion-radio  item-start></ion-radio> -->
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card
+      color=""
+      (click)="active = 2"
+      [ngClass]="active == 2 ? 'active' : ''"
+    >
+      <ion-card-header no-padding>
+        <ion-item class="item_head">
+          Chapter Two
+          <span item-end> <ion-icon name="ios-arrow-down"></ion-icon></span>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content class="content_2">
+        <ion-list radio-group [(ngModel)]="autoManufacturers2">
+          <ion-item no-padding no-lines>
+            <ion-label>Lession One</ion-label>
+            <ion-radio value="Chemistry" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Lession Two</ion-label>
+            <ion-radio value="Maths" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Lession Three</ion-label>
+            <ion-radio value="Biology" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Quiz</ion-label>
+            <ion-radio value="الانكليزي" item-start></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card
+      color=""
+      (click)="active = 3"
+      [ngClass]="active == 3 ? 'active' : ''"
+    >
+      <ion-card-header no-padding>
+        <ion-item class="item_head">
+          Chapter Two
+          <span item-end> <ion-icon name="ios-arrow-down"></ion-icon></span>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content class="content_2">
+        <ion-list radio-group [(ngModel)]="autoManufacturers3">
+          <ion-item no-padding no-lines>
+            <ion-label>Lession One</ion-label>
+            <ion-radio value="Chemistry" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Lession Two</ion-label>
+            <ion-radio value="Maths" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Lession Three</ion-label>
+            <ion-radio value="Biology" item-start></ion-radio>
+          </ion-item>
+
+          <ion-item no-padding no-lines>
+            <ion-label>Quiz</ion-label>
+            <ion-radio value="English" item-start></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card> -->
+    <ion-row>
+      <ion-col col-12 text-center>
+        <button ion-button block class="btn_cont" (click)="back_to_home()">الرجوع إلى الرئيسية</button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

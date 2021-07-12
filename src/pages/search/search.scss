@@ -1,0 +1,164 @@
+page-search {
+.back {
+    background: #f1f1f1;
+}
+.user {
+    border-bottom: 1px solid #f1f1f1;
+    background: #fff;
+    margin: 10px 10px;
+}
+   .dat {
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    color: black !important;
+    margin-bottom: 5px;
+    display: flex;
+}
+    .btn {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 20px !important;
+        color: darkgray !important;
+    }
+    .label {
+        margin: 8px 8px 8px 0px !important;
+    }
+    .rvBtn {
+        height: 22px !important;
+        padding: 0 8px !important;
+        margin: 0 !important;
+        border-radius: 2px !important;
+        font-size: 12px !important;
+    }
+    .rate {
+    position: absolute !important;
+    top: 12px !important;
+    right: 0 !important;
+}
+.desc {
+    font-size: 13px;
+    font-weight: 300;
+    white-space: normal;
+    padding-top: 5px;
+    line-height: 17px;
+}
+
+
+.accepted {
+    background: #f0f0f0;
+    padding: 11px;
+}
+.accepted h3 {
+    color: #20b2ed;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 7px 0 10px 0;
+}
+.accepted h6 {
+    font-size: 12px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.accepted h6 img{
+    margin-right: 10px;
+}
+.second_div h1 {
+    font-size: 15px;
+    margin: 10px 0 0;
+}
+.second_div p {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+}
+.second_div {
+    margin: 20px 0;
+}
+.second_div img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin: 8px 8px 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #8c8c8c;
+}
+.register_user img {
+    width: auto;
+    height: 23px;
+    margin-right: 10px;
+}
+.dat img {
+	width: 12px;
+	margin-right: 5px;
+}
+.heading_int img {
+	width: 13px;
+}
+.register_user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:12px;
+}
+.user_img img {
+    height: 105px;
+    width: 100%;
+    object-fit: cover;
+}
+.text-input {
+	background: #0000008c !important;
+	color: #fff !important;
+	border-radius: 22px;
+}
+.desc p {
+	font-size: 9px;
+	color: #000;
+}
+.user_img {
+    text-align: center;
+}
+.user .row {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.heading_int {
+    font-size: 15px !important;
+}
+.user .item-inner {
+    padding: 0 5px !important;
+    border: none !important;
+}
+.form_post {
+	margin-bottom: 20px;
+}
+.form_post .item {
+	padding: 0;
+	height: 30px;
+	border: 1px solid #ccc;
+	margin: 0;
+	width: 100%;
+	border-radius: 6px;
+}
+.text-input {
+	padding: 10px;
+}
+.select.item {
+	border: 1px solid #ccc;
+	margin: 0;
+	width: 100%;
+	border-radius: 6px;
+	padding: 0px 10px;
+}
+.item-inner {
+	padding: 0 !important;
+}
+.form_post h3 {
+	font-size: 15px;
+	margin: 20px 0 10px !important;
+}
+.back {
+	background: #f1f1f1;
+}
+}

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the TeacherprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="light">
+        <ion-title>لوحة التحكم </ion-title>
+        <!-- <ion-buttons end>
+            <button ion-button clear icon-only style="margin:0px 10px;">
+                <img src="assets/imgs/home/notification.png" height="16" />
+            </button>
+        </ion-buttons> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div text-center (click)="getImage()">
+        <img  class="profile" [src]="formData.profile" alt="" />
+        <button 
+        style="position: absolute;
+        right: 35%;
+        top: 1%;" 
+        ion-button clear icon-only item-end >
+            <ion-icon name="md-create"></ion-icon>
+        </button>
+    </div>
+    <ion-list>
+        <label class="label_name">الاسم الكامل</label>
+        <ion-item class="input_1" no-padding>
+            <input [(ngModel)]="formData.fullname" type="text" placeholder="John Smith" />
+        </ion-item>
+
+        <label class="label_name"> البريد الالكتروني</label>
+        <ion-item class="input_1" no-padding>
+            <input [(ngModel)]="formData.email" disabled type="email" placeholder="smith.john@gmail.com" />
+        </ion-item>
+
+        <label class="label_name">رقم الموبايل</label>
+        <ion-item class="input_1" no-padding>
+            <input [(ngModel)]="formData.phone" type="number" placeholder="+1 9874-654-321" pattern="[۰-۹]*" />
+        </ion-item>
+
+        <label class="label_name">اختار المادة </label>
+        <ion-item class="input_1" no-padding>
+            <!-- <ion-label>Chemistry</ion-label> -->
+            <ion-select placeholder="الانكليزي" [(ngModel)]="formData.subject" okText="نعم" cancelText="إلغاء">
+                <ion-option *ngFor="let item of subjectList" [value]="item.subject_id" text-capitalize>{{
+                    item.subject_name }}</ion-option>
+                <!-- <ion-option >Biology</ion-option>
+        <ion-option >Chemistry</ion-option>
+        <ion-option >English</ion-option> -->
+            </ion-select>
+        </ion-item>
+
+        <label class="label_name">اختار المحافظة</label>
+        <ion-item class="input_1" no-padding>
+            <!-- <ion-label>india</ion-label>
+  <ion-select [(ngModel)]="subject">
+    <ion-option value="f" >Brazil</ion-option>
+    <ion-option value="m">Australia</ion-option>
+  </ion-select> -->
+            <ion-select placeholder="مدينة" (ionChange)="onChange()" [(ngModel)]="formData.city" okText="نعم"
+                cancelText="إلغاء">
+                <ion-option text-capitalize *ngFor="let item of allcity" [value]="item.id" text-capitalize>{{ item.name
+                    }}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <label class="label_name"> المدرسة</label>
+        <ion-item class="input_1" no-padding>
+            <ion-select placeholder="المدرسة" [(ngModel)]="formData.school" okText="نعم" cancelText="إلغاء">
+                <ion-option text-capitalize *ngFor="let item of schoolList" [value]="item.school_id" text-capitalize>{{
+                    item.school_name }}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <label class="label_name">معلومات عن</label>
+        <ion-item class="input_2" no-padding>
+            <textarea style="width: 100%;border: none;height: 100px;padding-left:5px;background: transparent;" rows="2"
+                cols="200" [(ngModel)]="formData.about" type="text" placeholder="اكتب شيء عنك"></textarea>
+        </ion-item>
+
+        <div padding class="btn_grp">
+            <button ion-button block class="btn_cont" (click)="update()">حفظ</button>
+        </div>
+    </ion-list>
+</ion-content>

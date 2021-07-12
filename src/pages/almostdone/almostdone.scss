@@ -1,0 +1,109 @@
+page-almostdone {
+    .content {
+        background: #fff;
+    }
+
+ion-avatar {
+	min-width: 45px;
+	min-height: 45px;
+}
+.card_nw {
+    border-radius: 8px;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.13);
+    position: relative;
+    .item {
+        background: #eaf5f3;
+        padding: 10px 16px;
+        h2 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 13px !important;
+            font-family: 'Nunito-Bold';
+        }
+    }
+    .img_fx {
+        width: 50px;
+        position: absolute;
+        right: -2px;
+        top: -11px;
+    }
+}
+ion-avatar img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0;
+    object-fit: contain;
+    background: #fff;
+}
+.new_row.row {
+	padding: 0 16px;
+}
+.miles {
+    min-height: 60px;
+    -webkit-box-shadow: 0 6px 10px #00000024;
+    box-shadow: 0 6px 10px #00000024;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p_miles {
+    font-family: 'Nunito-ExtraBold';
+    font-size: 17px;
+    margin: 0;
+}
+.miles_small {
+	font-family: 'nunito-regular';
+	font-size: 13px;
+	color: #575757;
+}
+.cap {
+	margin: 0;
+}
+.map {
+	margin: 16px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.13);
+}
+.nw_btn{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border-radius: 0;
+    font-family: 'Nunito-Bold';
+}
+.upper_item{
+    p{
+        font-size: 15px;
+        color: #000;
+        font-family: 'Nunito-SemiBold';
+        white-space: normal;
+        margin: 10px 0;
+        font-family: 'Nunito-Bold';
+    }
+    h2{
+        color: #3f9982;
+        font-size: 25px;
+        margin: 20px 0 0;
+
+    }
+}
+ion-avatar {
+    min-width: 46px !important;
+    min-height: 46px !important;
+    background: #5ac5ad;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito-ExtraBold';
+    color: #fff;
+    box-shadow: 0 4px 5px #00000026;
+}
+}

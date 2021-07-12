@@ -1,0 +1,72 @@
+<ion-content padding class="back">
+  <div class="logo">
+    <img src="assets/imgs/seen/logo.png" />
+  </div>
+
+  <ion-row>
+    <ion-col col-6>
+      <div class="selct_div" text-center>
+        <img src="assets/imgs/seen/teacher.png" (click)="setTeacher(true)" />
+        <h3>  الاستاذ</h3>
+        <img
+          *ngIf="isTeacher == true"
+          src="assets/imgs/seen/tik.png"
+          class="tik_img"
+        />
+      </div>
+    </ion-col>
+    <ion-col col-6>
+      <div class="selct_div" text-center>
+        <img src="assets/imgs/seen/student.png" (click)="setTeacher(false)" />
+        <h3>الطالب </h3>
+        <img
+          *ngIf="isTeacher == false"
+          src="assets/imgs/seen/tik.png"
+          class="tik_img"
+        />
+      </div>
+    </ion-col>
+  </ion-row>
+<div class="button-pre">
+  <button ion-button block class="btn_cont" (click)="login()">متابعة</button>
+</div>
+  <!-- <div text-center class="videoWrapper">
+    <embed
+        src="https://www.youtube.com/embed/SEIwjllJNsg"
+        wmode="transparent"
+        type="video/mp4"
+        width="100%" height="100%"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen="true"
+        title="Keyboard Cat"
+    >
+    <div class="over"></div>
+  </div> -->
+
+
+  <!-- <div class="videoWrapper1">
+    <iframe *ngIf="lessonDetail.youtube_link" width="100%" height="160" frameborder="0" allowfullscreen [src]="youtubeUrl" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <div>
+        <embed
+            src="https://www.youtube.com/embed/SEIwjllJNsg?rel=0&amp;fs=0&amp;showinfo=0"
+            wmode="transparent"
+            type="video/mp4"
+            width="100%" height="220px"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen="true"
+            title="Keyboard Cat"
+        >
+      </div>
+    <div class="over"></div>
+    <div class="over-bottom"></div>
+
+    <iframe style="pointer-events:none" src="https://www.youtube.com/embed/SEIwjllJNsg?rel=0&amp;fs=0&amp;showinfo=0"></iframe>
+</div> -->
+
+
+
+
+
+
+
+</ion-content>

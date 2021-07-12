@@ -1,0 +1,234 @@
+page-details {
+    .content {
+            background: #fff;
+            background-repeat: repeat;
+            background-image: none;
+            background-size: auto;
+            background-image: url('../assets/imgs/seen/back2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    
+    ion-avatar {
+        min-width: 45px;
+        min-height: 45px;
+    }
+    .card_nw {
+        border-radius: 8px;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.13);
+        position: relative;
+        .item {
+            background: #eaf5f3;
+            padding: 10px 16px;
+            h2 {
+                font-size: 15px;
+            }
+            p {
+                font-size: 13px !important;
+                font-family: 'Nunito-Bold';
+            }
+        }
+        .img_fx {
+            width: 50px;
+            position: absolute;
+            right: -2px;
+            top: -11px;
+        }
+    }
+    ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0;
+        object-fit: contain;
+        background: #fff;
+    }
+    .new_row.row {
+        padding: 0 16px;
+    }
+    .miles {
+        min-height: 60px;
+        -webkit-box-shadow: 0 6px 10px #00000024;
+        box-shadow: 0 6px 10px #00000024;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .p_miles {
+        font-family: 'Nunito-ExtraBold';
+        font-size: 17px;
+        margin: 0;
+    }
+    .miles_small {
+        font-family: 'nunito-regular';
+        font-size: 13px;
+        color: #575757;
+    }
+    .cap {
+        margin: 3px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .map {
+        margin: 16px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.13);
+    }
+    .nw_btn{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        border-radius: 0;
+        font-family: 'Nunito-Bold';
+    }
+    
+    
+    
+    .bx_box {
+        text-align: center;
+        // background: #fff;
+        padding: 10px 0;
+        margin: 0 0 0 0;
+        width: 105px;
+        //display: inline-table;
+        p{
+          font-size: 14px;
+          margin: 5px 22px 0 0;
+        }
+        img {
+        width: 100%;
+        height: 52px;
+        object-fit: contain;
+    }
+    }
+    .heading {
+        padding: 16px 0 0px;
+        font-size: 16px;
+        margin: 0;
+        font-weight: 600;
+        position: relative;
+        text-align: left;
+        button{
+            position: absolute;
+            right: 11px;
+            bottom: -9px;
+        }
+    }
+    
+    .bx_box.bx_box_course {
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        text-align: unset;
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+            .box_course {
+                padding: 0 16px;
+            }
+            h5 {
+            font-size: 18px;
+            display: flex;
+            font-weight: 600;
+            align-items: center;
+            margin: 5px 0 0;
+                img{
+                width:15px;
+                margin-right: 8px;
+                }
+            }
+    
+            span.star img {
+                width: 80px !important;
+                }
+        }
+        
+    .price {
+        color: #ff9f00;
+        font-weight: 600;
+        font-size: 25px;
+        margin: 5px 0 0;
+        float: left;
+    }
+    
+    .badge {
+        background: #ff9f00;
+        padding: 2px 7px;
+        font-size: 12px;
+        border-radius: 5px;
+        margin-left: 3px;
+    }
+    .star {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .top_back {
+        position: absolute;
+        // top: 0;
+        top: env(safe-area-inset-top);
+        width: 100%;
+        .item{
+            background-color:rgba(0, 0, 0, 0.18);        
+            button{
+                margin: 3px 10px 0 10px;        
+            }
+        }
+    }
+    
+    .card.card-ios {
+        box-shadow: none;
+    }
+    .card.card-ios.active {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    .card-content {
+        max-height: 0;
+        transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+    }
+    .card.active .card-content{
+        max-height: 500px;
+        transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+    }
+    
+    
+    .lession_count {
+        display: flex;
+        align-items: center;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #000;
+        img {
+        width: 20px;
+        height: auto;
+        margin-right: 10px;
+    }
+    }
+    
+    .item_head {
+        background: #ff9f00;
+        border-radius: 10px;
+        color: #fff;
+    }
+    
+    .levelSpan {
+        // font-size: 11px;
+        // //border: 1px solid #9f00ff;
+        // padding: 1px 3px;
+        font-weight: 700;
+        color: #989797;
+        font-size: 15px;
+        justify-content: flex-end;
+    }
+    }
+    

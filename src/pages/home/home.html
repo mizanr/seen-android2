@@ -1,0 +1,193 @@
+<ion-header>
+    <ion-navbar color="light">
+        <ion-buttons start>
+            <button ion-button clear icon-only style="margin:0px 10px;" menuToggle>
+                <img src="assets/imgs/home/bar.png" height="16" />
+            </button>
+        </ion-buttons>
+        <ion-title>الرئيسية</ion-title>
+        <ion-buttons end>
+            <button ion-button clear icon-only style="margin:0px 10px;" (click)="noti()" >
+              <img src="assets/imgs/home/notification.png" height="16">
+              <ion-badge class="notifications-badge" color="danger"
+              *ngIf="auth.notification_count>0">
+               {{auth.notification_count}}
+              </ion-badge>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().grade != ''" padding-top
+        (ionInput)="getItems($event)" class="search_panel" placeholder="بحث" no-lines></ion-searchbar>
+
+    <div>
+        <!-- <div> -->
+        <h2 style="font-size: 19px;margin: 9px 0 0;">اكمل هذه المعلومات </h2>
+        <h3 class="heading">اختار صفك </h3>
+        <div class="flex_contain">
+            <div class="bx_box" *ngFor="let item of level" (click)="selectGrade(item.id)"
+                [ngClass]="active == item.id ? 'active' : ''">
+                <img [src]="item.image" />
+                <p>{{ item.title }}</p>
+            </div>
+        </div>
+
+
+        <h3 class="heading">اختار المادة </h3>
+        <ion-item>
+            <ion-select placeholder="الموضوع" interface="action-sheet" okText="نعم" cancelText="إلغاء"
+            (ionChange)="subject_change()"
+                [(ngModel)]="selectedSubject" multiple="true">
+                <ion-option *ngFor="let item of subjectList" [value]="item.subject_id">{{item.subject_name}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- <ion-card color="" (click)="toggleClass(activate)" no-padding [ngClass]="{ active: activate.active }">
+            <ion-card-header no-padding>
+                <ion-item class="item_head">
+                    <span>{{ selectedSubject }}</span>
+                    <span item-end> <ion-icon name="ios-arrow-down"></ion-icon></span>
+                </ion-item>
+            </ion-card-header>
+            <ion-card-content class="content_2">
+                <ion-list [(ngModel)]="selectedSubject">
+                    <ion-item *ngFor="let item of subjectList" no-padding no-lines>
+                        <ion-label>{{ item.subject_name }}</ion-label>
+                        <ion-radio (click)="toggleClass(activate)" [value]="item.subject_name"></ion-radio>
+                    </ion-item>
+                </ion-list>
+            </ion-card-content>
+        </ion-card> -->
+
+
+        <!-- <div text-center><button ion-button small (click)="submit()">Submit</button></div> -->
+    </div>
+
+    <!-- Static data (important) -->
+
+    <!-- <div *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().grade != ''">
+        <h3 class="heading">Your school grade</h3>
+        <div class="flex_contain">
+            <div class="bx_box active">
+                <img [src]="auth.getUserDetails().grade.image" />
+                <p>{{ auth.getUserDetails().grade.title }}</p>
+            </div>
+        </div>
+        <h3 class="heading">Your Subject</h3>
+        <ion-card color="" no-padding>
+            <ion-card-header no-padding>
+                <ion-item class="item_head">
+                    <span>{{ auth.getUserDetails().subject.subject_name }}</span>
+                </ion-item>
+            </ion-card-header>
+        </ion-card>
+    </div> -->
+
+    <div *ngIf="auth.isUserLoggedIn() || auth.getUserDetails().grade != ''">
+
+
+        <h3 class="heading">افضل الدورات</h3>
+
+        <div class="noDatadiv" *ngIf="noDataS">
+            <ion-icon name="ios-search-outline"></ion-icon>
+            <p>لم يتم العثور على شيء!</p>
+        </div>
+        <div class="flex_contain">
+
+            <div *ngFor="let k of courseList" class="bx_box bx_box_course" (click)="details(k)">
+                <img width="100%" style="object-fit:cover !important;height:150px !important" [src]="k.course_image" />
+
+                <div class="box_course">
+                    <p>{{k.course_title}}</p>
+
+                    <h5><img src="assets/imgs/seen/user.png" /> {{k.teacher_name}}</h5>
+
+                    <ion-row no-padding>
+                        <ion-col col-4 no-padding>
+                            <h3 class="price">{{k.price}}</h3>
+                        </ion-col>
+                        <ion-col col-8 no-padding text-right>
+                            <span class="star">
+                                <img src="assets/imgs/seen/star0.png" />
+                                <span class="badge">0</span>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 class="heading">دوراتي </h3>
+
+        <div class="noDatadiv" *ngIf="noDataSCourse">
+            <ion-icon name="ios-search-outline"></ion-icon>
+            <p>لم يتم العثور على شيء!</p>
+        </div>
+        <div class="flex_contain">
+
+            <div *ngFor="let k of myCourseList" class="bx_box bx_box_course" (click)="details(k)">
+                <img width="100%" style="object-fit:cover !important;height:150px !important" [src]="k.course_image" />
+
+                <div class="box_course">
+                    <p>{{k.course_title}}</p>
+
+                    <h5><img src="assets/imgs/seen/user.png" /> {{k.teacher_name}}</h5>
+
+                    <ion-row no-padding>
+                        <ion-col col-4 no-padding>
+                            <h3 class="price">{{k.price}}</h3>
+                        </ion-col>
+                        <ion-col col-8 no-padding text-right>
+                            <span class="star">
+                                <img src="assets/imgs/seen/star0.png" />
+                                <span class="badge">0</span>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+<h3 class="heading">About Us</h3>
+
+<div class="about">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+</div>
+
+<h3 class="heading" no-padding margin-bottom>Contact Us</h3>
+
+<div class="contact_div">
+
+<ion-item no-padding margin-bottom no-lines align-items-center>
+  <h3>البريد الالكتروني</h3>
+  <p>johndoe@gmail.com</p>
+  <button ion-button small clear item-end no-padding class="btn_mail">
+    <ion-icon name="md-mail"></ion-icon>
+  </button>
+</ion-item>
+<ion-item no-padding no-lines align-items-center>
+  <h3>Phone Number</h3>
+  <p>+91 958487584</p>
+
+  <button ion-button small clear item-end no-padding class="btn_phone">
+    <ion-icon name="ios-call"></ion-icon>
+  </button>
+</ion-item>
+
+
+
+</div> -->
+<ion-row>
+    <ion-col col-12 >
+        <strong>معلومات عنا</strong>
+    </ion-col>
+
+    <ion-col col-12 text-justify>
+        <div [innerHTML]="about_text"></div>
+    </ion-col>
+</ion-row>
+</ion-content>

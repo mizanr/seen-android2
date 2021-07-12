@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MywalletPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="light">
+  <ion-title>محفظتى</ion-title>
+  <!-- <ion-buttons end>
+    <button ion-button clear icon-only style="margin:0px 10px;" >
+      <img src="assets/imgs/home/notification.png" height="16">
+    </button>
+  </ion-buttons> -->
+
+  </ion-navbar>
+  </ion-header>
+<ion-content padding>
+
+	<div class="wallet" *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().user_type == 1">
+		<p>رصيدك
+		</p>
+		<h2>0</h2>
+		<!-- wallet_amount -->
+	</div>
+
+
+	<h3 class="heading" style="font-size: 15px;">تاريخ المعاملات
+	</h3>
+
+	<ion-item  no-padding *ngFor = "let k of dataP.my_transation_history" class="list_2" (click)="details(k)">
+		<p class="color_change">{{k.admin_msg}}</p>
+		<p>   {{k.studend_name}}  <span float-left>أسم الطالب</span></p>
+		<p>   {{k.phone}}  <span float-left>رقم الطالب</span></p>
+		<p>   {{k.course_title}}  <span float-left>اسم الدورة التدريبية</span></p>
+		<p>   {{k.payment_type}}  <span float-left>الدفع بواسطة</span></p>
+		<p>   {{k.created_at.replace(' ',"T") | date:'MMM,dd,yyy,hh:mm:a'}}  <span float-left>تاريخ التسجيل</span></p>
+		<h3 item-end>{{k.amount}}</h3>
+		<p class="rate">طالب مسجل
+			{{k.studentEndroll}}</p>
+	</ion-item>
+
+	<div class="noDatadiv" *ngIf="lists?.length == 0&&dataP.my_transation_history.length==0">
+        <ion-icon name="ios-search-outline"></ion-icon>
+        <p>لم يتم العثور على شيء!</p>
+    </div>
+
+</ion-content>

@@ -1,0 +1,70 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+    <img src="assets/imgs/header/logo.png" height="30">
+  </button>
+</ion-buttons>
+    <ion-title>settings</ion-title>
+    <!-- <ion-buttons end>
+		  <button ion-button (click)="notify()">
+			<img src="assets/imgs/home/notification.png" height="15">
+		  </button>
+    </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button (click)="profile()">
+      <img src="assets/imgs/profile-user.png" height="22">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+	<ion-item>
+      <ion-label style="font-size: 14px;">Notification</ion-label>
+      <ion-toggle color="danger" checked="true"></ion-toggle>
+    </ion-item>
+</ion-list>
+
+<ion-list no-lines>
+    <button ion-item (click)="profile()">
+     Profile
+    </button>
+</ion-list>
+
+<ion-list no-lines>
+  <button ion-item (click)="change()">
+    تغير كلمة السر
+  </button>
+</ion-list>
+
+<ion-list no-lines>
+  <button ion-item (click)="about()">
+   About Us
+  </button>
+</ion-list>
+
+    <ion-list no-lines>
+    <button ion-item (click)="terms()">
+     الاحكام والشروط
+    </button>
+</ion-list>
+<ion-list no-lines>
+     <button ion-item (click)="privacy()">
+     شروط الخصوصية
+    </button>
+</ion-list>
+<ion-list no-lines>
+     <button ion-item (click)="login()">
+     Log Out
+    </button>
+  </ion-list>
+</ion-content>

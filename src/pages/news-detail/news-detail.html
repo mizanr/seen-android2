@@ -1,0 +1,40 @@
+<!--
+  Generated template for the NewsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+    <img src="assets/imgs/header/logo.png" height="30">
+  </button>
+</ion-buttons>
+<ion-title>News</ion-title>
+<ion-buttons end >
+  <button ion-button (click)="notify()">
+  <img src="assets/imgs/home/notification.png" height="15">
+  </button>
+</ion-buttons>
+<ion-buttons end>
+  <button ion-button (click)="profile()">
+  <img src="assets/imgs/profile-user.png" height="22">
+  </button>
+</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="back">
+
+  <ion-item no-lines no-padding class="item_new">
+    <h3 >News Title</h3>
+    <p item-end>25-09-2020</p>
+  </ion-item>
+   <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+   </p>
+   <img src="assets/imgs/photo1.png" style="width: 100%;height: 180px;object-fit: cover;"> 
+   <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</ion-content>

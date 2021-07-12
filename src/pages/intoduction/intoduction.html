@@ -1,0 +1,25 @@
+<ion-content class="tutorial-page">
+  <ion-slides pager="true" #sl dir="rtl">
+    <ion-slide *ngFor="let img of images">
+      <!-- <ion-toolbar>
+        <ion-buttons end (click)="next()">
+          <button ion-button  class="btn_cont" clear >Skip</button>
+        </ion-buttons>
+      </ion-toolbar> -->
+      <img [src]="img.image" class="slide-image"/>
+        <h2 class="slide-title" [innerHTML]="img.title"></h2>
+        <p [innerHTML]="img.description"></p>
+        <button ion-button large clear icon-end (click)="next()"  class="btn_cont1">
+          يتخطى
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+    </ion-slide>
+    <!-- <ion-slide>
+      <div padding-horizontal>
+      <button (click)="next()"  ion-button  block  class="btn_cont" >Next</button>
+      </div>
+    </ion-slide> -->
+  </ion-slides>
+</ion-content>
+
+

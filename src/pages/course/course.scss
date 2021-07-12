@@ -1,0 +1,117 @@
+page-course {
+    .content {
+        background: #fff;
+        background-repeat: repeat;
+        background-image: none;
+        background-size: auto;
+        background-image: url("../assets/imgs/seen/back2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .toolbar-title {
+        color: #000 !important;
+        font-weight: normal;
+    }
+    button.btn_cont.complete {
+        background: #ff9f00;
+        color: #000;
+        font-weight: 600 !important;
+        font-size: 15px;
+    }
+    button.btn_cont {
+        font-weight: 600 !important;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    .box_course {
+      //  padding: 0 16px;
+        p {
+            p {
+                line-height: 20px;
+            }
+        }
+    }
+    video {
+        width: 100%;
+        height: 230px;
+        vertical-align: unset;
+        object-fit: cover;
+    }
+    .dots3 {
+        background: transparent;
+        top: 7px !important;
+        position: absolute;
+        right: 33px;
+    }
+    .item_head {
+        background: #ff9f00;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .card.card-ios {
+        box-shadow: none;
+    }
+    .card.card-ios.active {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+    .card-content {
+        max-height: 0;
+        transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+    }
+    .card.active .card-content {
+        max-height: 500px;
+        transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+    }
+    .lession_count {
+        display: flex;
+        align-items: center;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #000;
+        img {
+            width: 20px;
+            height: auto;
+            margin-right: 10px;
+        }
+    }
+    .heading {
+        padding: 16px 0 0px;
+        font-size: 16px;
+        margin: 0;
+        font-weight: 600;
+        position: relative;
+        button {
+            position: absolute;
+            right: 11px;
+            top: 50%;
+            transform: translate(0, -50%);
+            margin: 0px !important;
+        }
+    }
+    .ytp-overflow-icon {
+        display: none !important;
+    }
+    .ytp-chrome-top {
+        display: none !important;
+    }
+    .videoWrapper {
+        position: relative;
+        .over {
+            // position: absolute;
+            // z-index: 9999;
+            // height: 50px;
+            // width: 50px;
+            // background: transparent;
+            // top: 8px;
+            // right: 10px;
+            position: absolute;
+            z-index: 9999;
+            height: 50px;
+            width: 100%;
+            background: transparent;
+            top: 0px;
+            right: 0px;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+page-payment {
+.content {
+        //border-radius: 18px;
+        //background: #fff;
+        background-color: rgba(0, 0, 0, 0);
+      //  -webkit-box-shadow: 0 1px 3px #00001075;
+      //  box-shadow: 0 1px 3px #00001075;
+        //padding: 16px 16px 16px;
+      // position: relative;
+       // max-height: 400px;
+       // overflow: scroll;
+        //width: 95%;
+       // margin: 50% auto;
+        background-repeat: repeat;
+        background-image: none;
+        background-size: auto;
+        background-image: url('../assets/imgs/seen/back2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+.login_form {
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 1px 3px #00001075;
+        padding:16px 16px;
+        margin-top: 50%;
+        position: relative;
+        .btn_close {
+            position: absolute;
+            right: 0;
+            font-size: 25px;
+            color: #000;
+            top: 0;
+            line-height: 0;
+            height: 35px;
+        }
+    }
+    .heading {
+        text-align: center;
+    }
+	.logo h3 {
+		color: #000;
+		font-size: 22px;
+		text-transform: uppercase;
+	}
+
+	ion-item.top_item.item.item-block {
+    padding: 0px 28px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+    background-color: #0000;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 10px;
+    padding: 0 16px;
+}
+
+.btn_cont.btn_pay{
+    width: 100%;
+    height: 37px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.btn_cont.btn_cont_1{
+    font-size: 20px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    width: 90%;
+    }
+.radio-icon {
+    border: 1px solid #a502fb;
+    border-radius: 50%;
+    width: 20px !important;
+    height: 20px !important;
+}
+.radio-ios .radio-checked .radio-inner {
+    left: 2px;
+    top: 2px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-width: 5px;
+    border-top-width: 5px;
+    border-left-width: 5px;
+    border-style: solid;
+    border-color: #ff9f00;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border: 7px solid #ff9f00;
+}
+.radio-icon.radio-checked {
+    border: 1px solid #a306f9;
+}
+ion-item.item.item-block.item-ios.item-radio.item-radio-checked {
+    //background: #a404fa;
+    //border-radius: 50px;
+    color: #fff;
+    padding: 0 0 0 16px;
+}
+.item-radio-checked.item-ios ion-label {
+    color: #333;
+}
+}

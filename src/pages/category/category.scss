@@ -1,0 +1,38 @@
+page-category {
+    .content {
+        background: #e1e1e1;
+    }
+    .star {
+        display: block;
+        width: 82px;
+        margin: 4px 0 0;
+    }
+    .card_nw{
+        background: #fff;
+        margin-bottom: 10px;
+        h2 {
+            font-size: 13px !important;
+        }
+    .item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+        border-radius: 0;
+        overflow: hidden;
+        width: 56px;
+        height: 56px;
+    }
+    .item-ios ion-avatar {
+        min-width: 56px;
+        min-height: 56px;
+        margin: 0 14px 0px 0 !important;
+    }
+}
+.rate {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+.rate img {
+	margin-right: 4px;
+	width: auto;
+	height: 13px;
+}
+}

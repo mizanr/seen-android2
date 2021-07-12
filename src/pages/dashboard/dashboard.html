@@ -1,0 +1,200 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;" menuToggle>
+        <img src="assets/imgs/home/bar.png" height="16" />
+      </button>
+    </ion-buttons>
+    <ion-title>الرئيسية</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only style="margin:0px 10px;" (click)="noti()" >
+        <img src="assets/imgs/home/notification.png" height="16">
+        <ion-badge class="notifications-badge" color="danger"
+        *ngIf="auth.notification_count>0">
+         {{auth.notification_count}}
+        </ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-searchbar padding-top (ionInput)="getItems($event)" class="search_panel" placeholder="Search" no-lines></ion-searchbar> -->
+  <div class="user" *ngFor="let k of [1]">
+    <ion-list no-lines class="list_menu" style="margin: 16px 0px;">
+      <ion-item no-lines class="chat_item chat_item_2" style="background-color: transparent;">
+        <ion-avatar item-start class="avtar_menu">
+          <div class="user_img">
+            <img *ngIf="auth.isUserLoggedIn()" [src]="auth.getUserDetails().profile" />
+          </div>
+        </ion-avatar>
+        <h6 *ngIf="auth.isUserLoggedIn()" class="heading_int">
+          {{ auth.getUserDetails().full_name }}
+        </h6>
+        <p *ngIf="auth.isUserLoggedIn()" class="wallet_p">
+          <!-- <img src="assets/imgs/menu/wallet.png" (click)="wallet()" menuClose style="width:15px;margin-left:0;margin-right: 5px;margin-top: 2px;">  -->
+          {{ auth.getUserDetails().email }}
+        </p>
+        <p *ngIf="auth.isUserLoggedIn()" class="wallet_p">
+          <!-- <img src="assets/imgs/menu/wallet.png" (click)="wallet()" menuClose style="width:15px;margin-left:0;margin-right: 5px;margin-top: 2px;">  -->
+          {{ auth.getUserDetails().subject_name }}&nbsp;مدرس
+          <!-- Math Teacher -->
+        </p>
+        <p *ngIf="auth.isUserLoggedIn()" class="wallet_p">
+          <!-- <img src="assets/imgs/menu/wallet.png" (click)="wallet()" menuClose style="width:15px;margin-left:0;margin-right: 5px;margin-top: 2px;">  -->
+          {{ auth.getUserDetails().school_name }},{{
+          auth.getUserDetails().city_name
+          }}
+          <!-- Mgm school,Indore -->
+        </p>
+        <button style="position: absolute;left: 0;top: 0;" ion-button clear icon-only item-end (click)="editProfile()">
+          <ion-icon name="md-create"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- <h3 class="heading">لوحدة تحكم الاساتذة</h3> -->
+  <h3 class="heading">لوحة التحكم</h3>
+  <div class="flex_contain">
+    <div class="bx_box" (click)="courses()">
+      <h3>{{count}}</h3>
+      <!-- <img src="assets/imgs/seen/trophy1.png"> -->
+      <p>دوراتي</p>
+      <!-- <ion-item class="select_grade" no-lines no-padding>
+        <ion-radio value="cord"></ion-radio>
+      </ion-item> -->
+    </div>
+
+    <div class="bx_box" (click)="wallet()">
+      <h3>0</h3>
+      <!--  <img src="assets/imgs/seen/trophy2.png"> -->
+      <p>الدخل الكلي</p>
+      <!--    <ion-item class="select_grade" no-lines no-padding>
+        <ion-radio value="duesenberg"></ion-radio>
+      </ion-item> -->
+    </div>
+
+    <div class="bx_box" (click)="add()">
+      <img src="assets/imgs/seen/button.png" />
+      <p>اضافة دورة</p>
+    </div>
+
+    <div class="bx_box" (click)="logout()">
+      <!-- <img src="assets/imgs/seen/button.png" /> -->
+      <ion-icon style="font-size: 56px;" name="md-log-out"></ion-icon>
+      <p>تسجيل الخروج</p>
+    </div>
+  </div>
+
+  <!-- <h3 class="heading">Select Subject</h3>
+ -->
+
+  <!-- <ion-card color="" no-padding>
+
+  <ion-card-header no-padding>
+    <ion-item class="item_head">
+     All Subject
+    <span item-end> <ion-icon  name="ios-arrow-down"></ion-icon></span>
+    </ion-item>
+    
+  </ion-card-header>
+
+ <ion-card-content class="content_2" >
+   
+    <ion-list radio-group [(ngModel)]="autoManufacturers">
+
+  <ion-item no-padding no-lines>
+    <ion-label>Chemistry</ion-label>
+    <ion-radio value="Chemistry"></ion-radio>
+  </ion-item>
+
+  <ion-item no-padding no-lines>
+    <ion-label>Maths</ion-label>
+    <ion-radio value="Maths"></ion-radio>
+  </ion-item>
+
+  <ion-item no-padding no-lines> 
+    <ion-label>Biology</ion-label>
+    <ion-radio value="Biology"></ion-radio>
+  </ion-item>
+
+  <ion-item no-padding no-lines> 
+    <ion-label>English</ion-label>
+    <ion-radio value="English"></ion-radio>
+  </ion-item>
+
+</ion-list>
+    
+  </ion-card-content>
+
+</ion-card> -->
+
+  <!-- <ion-item no-lines>
+  <ion-label>Chemistry</ion-label>
+  <ion-select [(ngModel)]="subject" placeholder="Chemistry">
+    <ion-option value="f" >Maths</ion-option>
+    <ion-option value="m">Biology</ion-option>
+    <ion-option value="c">Chemistry</ion-option>
+    <ion-option value="e">English</ion-option>
+  </ion-select>
+</ion-item> -->
+
+  <!-- <h3 class="heading">Best Course</h3>
+
+<div class="flex_contain">
+     <div *ngFor = "let k of [1,2,3,4,5,6,7]"  class="bx_box bx_box_course" (click)="details()">
+      <img src="assets/imgs/seen/course1.png">
+
+<div class="box_course">
+      <p>Build skills with courses from top universities like Yale</p>
+
+      <h5><img src="assets/imgs/seen/user.png"> John Smith</h5>
+
+      <ion-row no-padding>
+        <ion-col col-4 no-padding>
+          <h3 class="price">199$</h3>
+        </ion-col>
+        <ion-col col-8 no-padding text-right>
+          <span class="star">
+            <img src="assets/imgs/seen/star.png">
+            <span class="badge">4</span>
+          </span>
+        </ion-col>
+      </ion-row>
+     </div>
+
+     </div>
+
+</div> -->
+
+  <!-- <h3 class="heading">About Us</h3>
+
+<div class="about">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+</div>
+
+<h3 class="heading" no-padding margin-bottom>Contact Us</h3>
+
+<div class="contact_div">
+
+<ion-item no-padding margin-bottom no-lines align-items-center>
+  <h3>البريد الالكتروني</h3>
+  <p>johndoe@gmail.com</p>
+  <button ion-button small clear item-end no-padding class="btn_mail">
+    <ion-icon name="md-mail"></ion-icon>
+  </button>
+</ion-item>
+<ion-item no-padding no-lines align-items-center>
+  <h3>Phone Number</h3>
+  <p>+91 958487584</p>
+
+  <button ion-button small clear item-end no-padding class="btn_phone">
+    <ion-icon name="ios-call"></ion-icon>
+  </button>
+</ion-item>
+
+
+
+</div> -->
+</ion-content>

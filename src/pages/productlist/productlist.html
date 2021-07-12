@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ProductlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  
+
+
+  <div class="login_form">
+
+    <button ion-button icon-only (click)="closemodal()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    
+  
+    <ion-list no-lines>
+
+      <h3 class="heading">Product List</h3>
+
+    </ion-list>
+
+    <ion-item class="filter_item" no-lines no-padding> 
+    
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="" no-lines></ion-searchbar>
+      <button ion-button item-end clear menuToggle>
+        <img src="assets/imgs/filter.png" height="35">
+      </button>
+      
+  </ion-item>
+
+    <div class="btn_check" *ngFor="let k of [1,2,3]">
+
+      
+
+    <ion-item class="avtar_item" no-lines>  
+      <ion-avatar item-start>
+        <div class="img_avtar">
+        <img src="assets/imgs/user.png">
+       
+      </div>
+      </ion-avatar>
+    
+      <h2>Product Name <span style="float: right;font-size: 12px;font-weight: normal;">ID: #10122</span></h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+      
+
+
+    </ion-item>
+    <ion-item class="avtar_item" > 
+    <div class="price" *ngFor="let k of [1,2,3]">
+      <div class="flex_box">
+        <div class="f1"><b>+</b></div>
+        <div class="f2"><b>0</b></div>
+        <div class="f1"><b>-</b></div>
+      </div>
+      <span style="font-weight: bold;">1L-bottle  <input type="text" style="width: 65px;padding: 10px !important;height: 25px;margin: 0 5px;" placeholder="250€/U"></span>
+
+
+  
+      <span class="rate" style="margin: 0;"><b>0€</b></span>
+    </div>
+    
+    <ion-item no-lines no-padding class="total">
+      <p style="margin: 0;"><b>Total</b></p>
+      <p style="margin: 0;" item-end><b>00€</b>
+       <!-- <input type="text" value="1000$"> -->
+      </p>
+    </ion-item>
+
+    </ion-item>
+
+
+    <!-- <ion-checkbox color="primary"></ion-checkbox> -->
+  </div>
+
+    </div>
+
+
+    <ion-fab center bottom>
+      <button ion-button color="primary" block (click)="place()">Order</button>
+    </ion-fab>
+    </ion-content>

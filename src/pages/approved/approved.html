@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button (click)="logout()" ion-button icon-only clear>
+        <ion-icon name="ios-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="back_img">
+  <div class="login_form_top">
+    <div class="login_form">
+      <div class="logo">
+        <img src="assets/imgs/seen/logo.png" />
+        <img src="assets/imgs/seen/success.png" style="width: 80px;margin: 0 auto 50px;" />
+      </div>
+
+      <div class="heading_login" text-right>
+        <h3>عزيزي الاستاذ</h3>
+        <p>سوف يتم تفعيل حسابك من قبل الإدارة </p>
+        <p>
+          سوف تستلم بريد الكتروني او يتصل بك مندوبنا لغرض استكمال بعض البيانات خلال 24 ساعة القادمة
+        </p>
+      </div>
+
+      <ion-item no-lines no-padding text-right>
+        <div class="heading_login">
+          <h3 style="font-size: 16px;color: #ff9f00;font-weight: 500;">
+            شكراً على ثقتك بنا
+          </h3>
+          <p style="font-size: 14px; color: #000;">فريق سين </p>
+        </div>
+      </ion-item>
+
+      <!-- <div no-padding class="btn_grp">
+        <button ion-button block class="btn_cont" (click)="next()">Ok</button>
+      </div> -->
+    </div>
+  </div>
+</ion-content>

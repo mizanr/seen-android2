@@ -1,0 +1,86 @@
+page-mycampaign {
+    .block {
+        width: 100%;
+      //  padding-top: 20px;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 1px 1px 7px #e3e3e3;
+
+        .text-input-ios {
+            margin: 13px 8px 11px 15px !important;
+        }
+
+        .text-input-md {
+            margin: 13px 8px 11px 15px !important;
+        }
+    }
+    .seg {
+        padding: 16px;
+        background: #fff;
+        z-index: +99;
+        position: relative;
+        border-radius: 35px;
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border-style: solid;
+        border-color: transparent;
+    }
+    .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 3.2rem;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        color: #3f9982;
+        background-color: transparent;
+        border: none !important;
+        border-bottom: 2px solid #ccc !important;
+        border-radius: 0 !important;
+        font-size: 16px !important;
+        color: #ccc !important;
+    }
+
+    .segment-button.segment-activated {
+        color: #3f9982 !important;
+        background-color: #fff !important;
+        opacity: 1 !important;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        border-bottom: 2px solid #3f9982 !important;
+        border: none;
+    }
+
+    .listing {
+        ion-item {
+            width: 100%;
+            background-color: white;
+            height: 80px;
+            border-radius: 8px;
+            -webkit-box-shadow: 1px 1px 10px #f7f7f7;
+            box-shadow: 1px 1px 7px #e3e3e3;
+        }
+
+        .item-inner{
+            border-bottom: 0 !important;
+        }
+    }
+    .avtar_item{
+        img {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+            box-shadow: 1px 1px 7px #979797d9;
+            object-fit: contain;
+            background: #1d2862;
+        }
+    }
+    .btn_acc {
+        padding: 3px 10px;
+        font-size: 11px;
+        margin: 3px !important;
+    }
+}

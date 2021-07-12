@@ -1,0 +1,104 @@
+<!--
+  Generated template for the EmailFormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     <button ion-button start clear small color="primary" style="width: 25px;" (click)="back()">
+       <img src="assets/imgs/back.png">
+     </button>
+    </ion-buttons>
+    <!-- <ion-back-button style=" color: black;margin-right: 90%; margin-top: -17px;" defaultHref="campaigns"></ion-back-button> -->
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="back_img" no-padding>
+  <div class="bg" padding>
+    <div>
+  <!-- <img style="margin-top: 0; width: 100%; height: auto; padding: 30px;" src="assets/imgs/signup/car.png"> -->
+  <form>
+
+    <!-- <p style="color: black; font-size: 15px; margin-top: 16px; text-align: left;">Enter your البريد الالكتروني and password</p> -->
+
+    <ion-list lines="none">
+    <div class="box">
+    <ion-item no-lines>
+      <ion-input style="color: black;" type="text" placeholder="Enter your first name">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <ion-item no-lines>
+      <ion-input style="color: black;" type="text" placeholder="Enter your Last name">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <ion-item no-lines>
+      <ion-input style="color: black;" type="email" placeholder="Enter you Email">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <ion-item no-lines>
+      <ion-input style="color: black;" type="text" placeholder="Date of Birth">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <ion-item no-lines>
+      <ion-input style="color: black;" type="text" placeholder="License no.">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box" style="border: none;">
+    <label>Choose Your Profile Picture</label>
+    <ion-item no-lines no-padding>
+      <button ion-button small>Upload Image</button>
+    </ion-item>
+  </div>
+ 
+
+<div class="box">
+  <ion-item no-lines>
+      <ion-input style="color: black;" type="password" placeholder="Password">
+      </ion-input>
+    </ion-item>
+    </div>
+
+    <div class="box">
+      <ion-item no-lines>
+          <ion-input style="color: black;" type="password" placeholder="تاكيد كلمة السر ">
+          </ion-input>
+        </ion-item>
+        </div>
+
+    </ion-list>
+
+    <ion-item no-lines no-padding>
+      <ion-label style="white-space: normal;font-size: 14px;">agree to our <a (click)="terms()" style="color: #3f9982;text-decoration: underline;">Tearms and Conditions</a></ion-label>
+      <ion-toggle value="foo" checked="true" item-start></ion-toggle>
+    </ion-item>
+
+    <ion-item no-lines no-padding>
+      <ion-label style="white-space: normal;font-size: 14px;">Are you currently aride sharing driver (Uber,Lyft,etc..)?</ion-label>
+      <ion-toggle value="foo" checked="true" item-start></ion-toggle>
+    </ion-item>
+    
+  </form>
+   </div>
+</div>
+
+<button class="nw_btn" ion-button block color="primary" (click)="home()">SIGN UP</button>
+</ion-content>
+

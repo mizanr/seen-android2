@@ -1,0 +1,72 @@
+page-wallet {
+h3{
+    font-family: 'Nunito-Bold' !important;
+}
+    .all_camp {
+        display: flex;
+        width: 100%;
+    
+    .img_circle {
+        padding: 10px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .img_circle img {
+        background: #212b64;
+        border-radius: 50px;
+        height: 45px;
+        width: 45px;
+        object-fit: contain;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.14);
+    }
+    .img_circle p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
+.wallet {
+    box-shadow: 0 2px 8px #00000021;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-radius: 5px;
+    .item {
+        
+        h1{
+            font-size: 20px;
+        }
+        span {
+            background: #5ac5ad;
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+        }
+
+    }
+
+}
+
+
+.item_activity{
+    margin: 10px 0;
+ ion-avatar {
+	min-width: 46px !important;
+	min-height: 46px !important;
+} ion-avatar img {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 46px !important;
+	height: 46px !important;
+}
+.item {
+    margin-bottom: 15px;
+    
+}
+
+}
+
+
+}

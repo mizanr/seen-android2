@@ -1,0 +1,27 @@
+page-settings {
+	.content{
+		background: #e1e1e1;
+	}
+.list .item {
+	border: none !important;
+	min-height: 60px;
+	font-size: 14px;
+	color: #464646;
+	background: transparent;
+}
+.list{
+	margin: 0 !important;
+}
+.item.item-block.item-toggle {
+	min-height: 70px;
+	border: none !important;
+}
+span {
+	display: block;
+}
+.item-block .item-inner {
+	padding-right: 8px;
+	padding-right: 8px;
+	border-bottom: none !important;
+}
+}

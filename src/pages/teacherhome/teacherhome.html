@@ -1,0 +1,189 @@
+<ion-header>
+    <ion-navbar color="light">
+        <ion-buttons start>
+            <button ion-button clear icon-only style="margin:0px 10px;" menuToggle>
+                <img src="assets/imgs/home/bar.png" height="16" />
+            </button>
+        </ion-buttons>
+        <ion-title>الرئيسية</ion-title>
+        <ion-buttons end>
+            <button ion-button clear icon-only style="margin:0px 10px;" (click)="noti()" >
+              <img src="assets/imgs/home/notification.png" height="16">
+              <ion-badge class="notifications-badge" color="danger"
+              *ngIf="auth.notification_count>0">
+               {{auth.notification_count}}
+              </ion-badge>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="noDatadiv" *ngIf="noDataS">
+        <ion-icon name="ios-search-outline"></ion-icon>
+        <p>لم يتم العثور على شيء!</p>
+    </div>
+
+    <ion-slides pager *ngIf="courseList.length>0">
+        <ion-slide>
+            <div class="top_slide">
+                <img [src]="courseList[0].course_image" class="slide-image" style="width: 100%;height: 250px;  " />
+                <div class="content_top">
+                    <p style="margin: 0;color: #fff;font-size: 16px;line-height: 20px;">
+                        {{ courseList[0].course_title }}
+                    </p>
+                    <ion-row no-padding>
+                        <ion-col col-4 no-padding>
+                            <h3 class="price">{{ courseList[0].price }}</h3>
+                        </ion-col>
+                        <ion-col col-8 no-padding text-right style="display: flex;flex-direction: row-reverse;">
+                            <span class="star">
+                                <img src="assets/imgs/seen/star0.png" />
+                                <span class="badge">0</span>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide *ngIf="courseList.lenght>1">
+            <div class="top_slide">
+                <img [src]="courseList[1].course_image" class="slide-image" style="width: 100%;height: 250px;  " />
+                <div class="content_top">
+                    <p style="margin: 0;color: #fff;font-size: 16px;line-height: 20px;">
+                        {{ courseList[1].course_title }}
+                    </p>
+                    <ion-row no-padding>
+                        <ion-col col-4 no-padding>
+                            <h3 class="price">{{ courseList[1].price }}</h3>
+                        </ion-col>
+                        <ion-col col-8 no-padding text-right style="display: flex;flex-direction: row-reverse;">
+                            <span class="star">
+                                <img src="assets/imgs/seen/star0.png" />
+                                <span class="badge">0</span>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide *ngIf="courseList.lenght>2">
+            <div class="top_slide">
+                <img [src]="courseList[2].course_image" class="slide-image" style="width: 100%;height: 250px;" />
+                <div class="content_top">
+                    <p style="margin: 0;color: #fff;font-size: 16px;line-height: 20px;">
+                        {{ courseList[2].course_title }}
+                    </p>
+                    <ion-row no-padding>
+                        <ion-col col-4 no-padding>
+                            <h3 class="price">{{ courseList[2].price }}</h3>
+                        </ion-col>
+                        <ion-col col-8 no-padding text-right style="display: flex;flex-direction: row-reverse;">
+                            <span class="star">
+                                <img src="assets/imgs/seen/star0.png" />
+                                <span class="badge">0</span>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <div *ngIf="courseList.length>0" padding-horizontal>
+        <h3 class="heading">دوراتي </h3>
+
+        <div class="flex_contain">
+            <div *ngFor="let k of courseList" class="bx_box bx_box_course">
+                <img style="height: 80px;object-fit: cover" [src]="k.course_image" />
+
+                <div class="box_course">
+                    <!-- <h5 no-margin>
+               
+                
+              </h5> -->
+
+                    <ion-row align-items-center>
+                        <ion-col col-8 no-padding>
+                            <h5 class="dotDot" no-margin>{{ k.course_title }}</h5>
+                        </ion-col>
+                        <ion-col text-left col-4 no-padding>
+                            <h3 class="price dotDot">{{ k.price }}</h3>
+                            <!-- <span class="levelSpan">{{ k.level_name }}</span> -->
+                        </ion-col>
+                    </ion-row>
+                    <!-- <p>{{ k.course_description }}</p> -->
+                    <!-- <p>Category: {{ k.cate_name }}</p> -->
+                    <ion-row align-items-center>
+                        <ion-col col-auto text-left no-padding>
+                            <span class="levelSpan">{{ k.cate_name }}</span>
+                        </ion-col>
+                        <ion-col col-auto style="padding-left:5px" text-right no-padding>
+                            <span class="levelSpan">{{ k.level_name }}</span>
+                        </ion-col>
+                    </ion-row>
+                    <span class="star">
+                        <img src="assets/imgs/seen/star0.png" />
+                        <span class="badge">0</span>
+                    </span>
+                    <!-- <ion-row align-items-center no-padding>
+                <ion-col col-4 no-padding>
+                  <h3 class="price">${{ k.price }}</h3>
+                </ion-col>
+                <ion-col col-8 no-padding text-right>
+                  <span class="star">
+                    <img src="assets/imgs/seen/star0.png" />
+                    <span class="badge">0</span>
+                  </span>
+                </ion-col>
+              </ion-row> -->
+                    <!-- <p class="dotDot" [innerHTML]="k.course_description"></p> -->
+
+                    <button ion-button small class="btn_cont btn_pay" (click)="details(k)" item-end>
+                        معلومات اكثر
+                    </button>
+                </div>
+            </div>
+            <!-- <div
+        *ngFor="let k of courseList"
+        class="bx_box bx_box_course"
+        (click)="details()"
+      >
+        <img [src]="k.course_image" />
+
+        <div class="box_course">
+          <p>Build skills with courses from top universities like Yale</p>
+
+          <h5>
+            95 Purchased
+          </h5>
+
+          <ion-row no-padding>
+            <ion-col col-4 no-padding>
+              <h3 class="price">199$</h3>
+            </ion-col>
+            <ion-col col-8 no-padding text-right>
+              <span class="star">
+                <img src="assets/imgs/seen/star.png" />
+                <span class="badge">4</span>
+              </span>
+            </ion-col>
+          </ion-row>
+          <button
+            ion-button
+            small
+            class="btn_cont btn_pay"
+            (click)="quiz()"
+            item-end
+          >
+            معلومات اكثر
+          </button>
+        </div>
+      </div> -->
+        </div>
+    </div>
+
+    
+
+
+</ion-content>

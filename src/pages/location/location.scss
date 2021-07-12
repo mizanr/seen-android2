@@ -1,0 +1,29 @@
+page-location {
+    ion-content {
+        background-image: url(../assets/imgs/map.png);
+        background-repeat: no-repeat;
+        background-position-y: 40px;
+        background-size: cover;
+    }
+     .new_row.row {
+        background: #000;
+        border-top: 2px solid #5ac5ad;
+        border-radius: 10px 10px 0 0;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 16px;
+    }
+.p_miles {
+	font-size: 14px;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-top: 2px;
+}
+.cap {
+	font-size: 22px;
+	color: #3f9982;
+	font-family: 'Nunito-ExtraBold';
+	margin: 0;
+}
+}

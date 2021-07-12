@@ -1,0 +1,76 @@
+page-login {
+
+.content {
+		background: #f1f1f1;
+		background-repeat: repeat;
+		background-image: none;
+		background-size: auto;
+		background-image: url('../assets/imgs/seen/back.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+.bg {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+  .box {
+   width: 100%;
+   text-align: center;
+}
+
+.logo {
+	text-align: center;
+	margin: 0px;
+	img{
+	   width:140px;
+	}
+}
+.selct_div {
+	h3 {
+	font-size: 15px;
+	margin: 0;
+    }
+}
+  .errmsg{
+	display:block;
+	color:red;
+	margin-top:5px;
+  }
+  .design{
+	margin-top: 19%;
+  }
+  .subtitle{
+	color: black;
+	margin-top: 20px;
+  }
+  .bottom-text {
+	color: black;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0;
+}
+  .sstitle{
+	color: black;
+	margin-top: 10px;
+	font-size: 16px;
+	margin-bottom: 0;
+  }
+  .bottext{
+	color:black;
+	font-size: 15px; 
+	margin-top: 10px;
+	font-family: 'Nunito-Bold';
+  }
+  .bottomtext{
+	margin-top: 25px;
+	font-size: 15px;
+	margin-bottom: 0;
+  }
+  .bottomtext a {
+	font-family: 'Nunito-Bold';
+}
+}

@@ -1,0 +1,145 @@
+<div>
+  <ion-menu [content]="nav" side="right" type="overlay" persistent="true" swipeEnabled="false">
+    <ion-content>
+      <div class="user" *ngFor="let k of [1]">
+        <ion-list no-lines class="list_menu" style="margin: 16px 0px;">
+          <ion-item no-lines class="chat_item chat_item_2" style="background-color: transparent;">
+            <ion-avatar item-start class="avtar_menu">
+              <div class="user_img">
+                <img *ngIf="auth.isUserLoggedIn()" [src]="auth.getUserDetails().profile" />
+              </div>
+            </ion-avatar>
+            <h6 *ngIf="auth.isUserLoggedIn()" class="heading_int" style="color: #000;font-size: 18px;">
+              {{ auth.getUserDetails().full_name }}
+            </h6>
+            <p *ngIf="auth.isUserLoggedIn()" class="wallet_p">
+              <!-- <img src="assets/imgs/menu/wallet.png" (click)="wallet()" menuClose style="width:15px;margin-left:0;margin-right: 5px;margin-top: 2px;">  -->
+              {{ auth.getUserDetails().email }}
+            </p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <ion-list class="menu-btn">
+        <button ion-item (click)="profile()" menuClose no-lines>
+          ملفي الشخصي
+        </button>
+        <button *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().user_type == 1" ion-item menuClose no-lines
+          (click)="change()">
+          تغير كلمة السر
+        </button>
+        <button ion-item menuClose no-lines (click)="courses()">
+          دوراتي
+        </button>
+        <button *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().user_type == 2" ion-item menuClose no-lines
+          (click)="trans()">
+          التحويلات
+        </button>
+        <button *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().user_type == 2" ion-item menuClose no-lines
+          (click)="about()">
+          معلومات عن
+        </button>
+
+        <button ion-item menuClose no-lines (click)="help()">
+          مساعدة
+        </button>
+
+        <!-- 1 is Teacher & 2 is User -->
+        <button *ngIf="auth.isUserLoggedIn() && auth.getUserDetails().user_type == 1" ion-item menuClose no-lines
+          (click)="wallet()">
+          محفظتي
+        </button>
+        <button ion-item menuClose no-lines (click)="logout()">
+          تسجيل الخروج
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" #nav id="nav"></ion-nav>
+</div>
+
+<!-- <div *ngIf="type == 0">
+  <ion-menu [content]="nav" type="overlay" persistent="true">
+    <ion-content>
+      <div class="user" *ngFor="let k of [1]">
+        <ion-list no-lines class="list_menu" style="margin: 16px 0px;">
+          <ion-item
+            no-lines
+            class="chat_item chat_item_2"
+            style="background-color: transparent;"
+          >
+            <ion-avatar item-start class="avtar_menu">
+              <div class="user_img">
+                <img src="assets/imgs/seen/user_side.png" />
+              </div>
+            </ion-avatar>
+            <h6 class="heading_int" style="color: #000;font-size: 18px;">
+              Jeniffer Smith
+            </h6>
+            <p class="wallet_p">
+              smith.jeniffer@gmail.com
+            </p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <ion-list class="menu-btn">
+        <button ion-item (click)="profileteacher()" menuClose no-lines>
+          My Profile
+        </button>
+
+        <button ion-item menuClose no-lines (click)="change()">
+          Change Password
+        </button>
+
+        <button ion-item menuClose no-lines (click)="courses()">
+          My Courses
+        </button>
+
+        <button ion-item menuClose no-lines (click)="wallet()">
+          My Wallet
+        </button>
+
+        <button ion-item menuClose no-lines (click)="help()">
+          Help
+        </button>
+
+        <button ion-item menuClose no-lines (click)="login()">
+          Log Out
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" #nav id="nav"></ion-nav>
+</div> -->
+
+<!-- <div text-center class="customSplash">
+      <img class="logo" src="../assets/imgs/splashes/logo.png" alt="" />
+  <img class="mImage" src="../assets/imgs/splashes/image-1.png" alt="" />
+  <p padding-horizontal>
+      <span>Hello Users</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+    Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at
+    nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+  </p>
+</div> -->
+
+<div *ngIf="splashData" text-center class="customSplash">
+  <img class="logo" src="../assets/imgs/splashes/logo.png" alt="" />
+  <!-- <img class="mImage" [src]="splashData.main_image" alt="" /> -->
+
+  <!-- <ion-slides pager *ngFor="let i of splashData.main_image">
+
+      <ion-slide style="background-color: green">
+       <img [src]="i" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="splashData.title"></h2>
+      <p [innerHTML]="splashData.description"></p>
+      </ion-slide>
+    
+    </ion-slides> -->
+  <p padding-horizontal>
+    <span>{{ splashData.title }}</span> {{ splashData.description }}
+  </p>
+</div>

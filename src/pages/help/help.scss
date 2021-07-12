@@ -1,0 +1,29 @@
+page-help {
+   .content {
+        background: #fff;
+        background-repeat: repeat;
+        background-image: none;
+        background-size: auto;
+        background-image: url('../assets/imgs/seen/back2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .toolbar-title {
+    text-align: center;
+    color:#000 !important;
+}
+.toolbar-background {
+    border-color: rgba(255, 255, 255, 0) !important;
+}
+.title {
+    padding: 0 10px !important;
+} 
+h5 {
+	font-weight: normal;
+	font-size: 15px;
+}
+p {
+	color: #111111;
+}
+}

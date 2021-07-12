@@ -1,0 +1,145 @@
+page-course-sidebar {
+.login_form {
+    background: #fff;
+    box-shadow: 0 1px 3px #00001075;
+    padding: 0 0;
+    position: absolute;
+    width: 75%;
+    border-radius: 0;
+    overflow-y: scroll;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+.btn_close {
+	font-size: 20px;
+}
+.content {
+        //border-radius: 18px;
+        //background: #fff;
+        background-color: rgba(0, 0, 0, 0);
+      //  -webkit-box-shadow: 0 1px 3px #00001075;
+      //  box-shadow: 0 1px 3px #00001075;
+        //padding: 16px 16px 16px;
+      // position: relative;
+       // max-height: 400px;
+       // overflow: scroll;
+        //width: 95%;
+       // margin: 50% auto;
+        background-repeat: repeat;
+        background-image: none;
+        background-size: auto;
+        background-image: url('../assets/imgs/seen/back2.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.radio-icon {
+    border: 1px solid #a502fb;
+    border-radius: 50%;
+    width: 20px !important;
+    height: 20px !important;
+}
+.radio-ios .radio-checked .radio-inner {
+    left: 2px;
+    top: 2px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-width: 5px;
+    border-top-width: 5px;
+    border-left-width: 5px;
+    border-style: solid;
+    border-color: #ff9f00;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 50%;
+    border: 7px solid #ff9f00;
+}
+.radio-icon.radio-checked {
+    border: 1px solid #a306f9;
+}
+ion-item.item.item-block.item-ios.item-radio.item-radio-checked {
+    //background: #a404fa;
+    //border-radius: 50px;
+    color: #fff;
+    padding: 0 0px;
+}
+.item-radio-checked.item-ios ion-label {
+    color: #333;
+}
+
+.bx_box.active {
+    background: #ff9f00;
+    border: 1px solid #a306f9;
+    transition: all ease-in-out 0.5s;
+    p {
+    font-size: 15px;
+    margin: 5px 0 0;
+    color: #fff;
+    font-weight: 600;
+}
+}
+
+.item-inner {
+    padding: 0 !important;
+}
+.card-header {
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+   // border-radius: 12px;
+}
+.card {
+    margin: 0px 0;
+    width: 100%;
+    background: #f9f9f9;
+   // border: 1px solid #e1e1e1;
+   // border-radius: 12px;
+}
+
+.card.card-ios {
+    box-shadow: none;
+}
+.card.card-ios.active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    //border-radius: 10px;
+}
+.card-content {
+    max-height: 0;
+    transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+}
+.card.active .card-content{
+    max-height: 500px;
+    transition: max-height 500ms ease 0s, padding 500ms ease 0s;
+}
+
+.content_2 {
+    padding: 13px 16px 0;
+}
+.card.active .content_2 {
+    padding: 13px 16px 13px;
+}
+.item_head {
+    background: #ff9f00;
+   // border-radius: 10px;
+    color: #000;
+    font-weight: 600;
+}
+.heading {
+	background: #9f00ff;
+	margin: 0;
+	padding: 10px 16px;
+	color: #fff;
+	font-size: 25px;
+}
+.card.card-ios.active .card-header .item_head {
+	background: #fff;
+}
+.btn_close {
+	position: absolute;
+	top: -15px;
+	left: 0px;
+	color: #fff;
+	font-size: 35px !important;
+}
+}

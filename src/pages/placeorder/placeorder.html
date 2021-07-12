@@ -1,0 +1,59 @@
+<!--
+  Generated template for the PlaceorderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  
+
+
+  <div class="login_form">
+
+    <button ion-button icon-only (click)="closemodal()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    
+  
+    <ion-list no-lines>
+
+      <h3 class="heading">PLACE ORDER</h3>
+
+      <!-- <label>order Id</label>
+      <ion-item class="input_1" no-lines no-padding (click)="list()">
+        <input type="text" placeholder="" >
+      </ion-item> -->
+
+      <label>Image</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <button color="primary"  ion-button >Select picture</button>
+      </ion-item>
+
+    
+      <label>Signature</label>
+      <ion-item class="input_1" no-lines no-padding style="height: auto;">
+        <textarea rows="4"></textarea>
+      </ion-item>
+
+
+      <label>Add Note</label>
+      <ion-item class="input_1" no-lines no-padding style="height: auto;">
+        <textarea rows="6"></textarea>
+        <img src="assets/imgs/mute.png" class="img_audio">
+      </ion-item>
+
+    </ion-list>
+
+
+   
+
+    <ion-row style="justify-content: center;" no-padding>
+      <ion-col col-4>
+        <button ion-button color="primary" block>Order</button>
+      </ion-col>
+     
+    </ion-row>
+    </div>
+
+
+</ion-content>

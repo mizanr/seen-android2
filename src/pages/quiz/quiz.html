@@ -1,0 +1,80 @@
+<!--
+  Generated template for the QuizPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{questions?.quiz_title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+          <!-- For Teacher QA Portation -->
+          <div  *ngIf="auth?.getUserDetails()?.user_type == 1">
+  <div *ngFor="let item of questions?.questions;let i=index"  class="quiz">
+    <p style="font-size: 15px;font-weight: 500;margin-bottom: 25px;">
+     {{i+1}}. {{item.question}}
+    </p>
+    <ion-list radio-group class="radio_list">
+      <ion-item *ngFor="let k of item.choice"  no-lines>
+        <ion-label style="opacity:1">{{k}}</ion-label>
+        <ion-radio disabled style="opacity:1" value="membranes"></ion-radio>
+      </ion-item>
+      <!-- <ion-item no-lines>
+        <ion-label>Proteins</ion-label>
+        <ion-radio value="Proteins"></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Nucleic Acids</ion-label>
+        <ion-radio value="Acids"></ion-radio>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label>All of these</ion-label>
+        <ion-radio value="these"></ion-radio>
+      </ion-item> -->
+
+      <ion-item style="background: #a404fa;border-radius: 50px;" no-lines>
+        <ion-label style="color: white;">الجواب الصحيح: {{item.answer}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <hr />
+  </div>
+</div>
+          <!-- For Student QA Portation -->
+
+        
+  <div *ngIf="auth?.getUserDetails()?.user_type == 2">
+  <div class="quiz" *ngFor="let item of questions?.questions;let i=index">
+    <p style="font-size: 15px;font-weight: 500;margin-bottom: 25px;">
+      {{i+1}}. {{item.question}}
+    </p>
+    <ion-list radio-group [(ngModel)]="item['ans']" class="radio_list">
+      <ion-item no-lines *ngFor="let k of item.choice">
+        <ion-label>{{k}}</ion-label>
+        <ion-radio (ionSelect)="quiz_choice(item,k)"></ion-radio>
+      </ion-item>
+      <!-- <ion-item no-lines>
+        <ion-label>Proteins</ion-label>
+        <ion-radio value="d"></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Nucleic Acids</ion-label>
+        <ion-radio value="dg"></ion-radio>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label>All of these</ion-label>
+        <ion-radio value="df"></ion-radio>
+      </ion-item> -->
+    </ion-list>
+  </div>
+  <div text-center>
+    <button block ion-button class="btn_cont" (click)="submit_quiz()">ارسال الاختبار</button>
+  </div>
+</div>
+  <!-- <button ion-button block class="btn_cont btn_cont_1" (click)="result()">Submit</button> -->
+</ion-content>

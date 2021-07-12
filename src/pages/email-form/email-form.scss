@@ -1,0 +1,82 @@
+page-email-form {
+    // .back_img {
+	// 	background: url(../assets/imgs/signup/back2.png);
+	// 	background-color: rgba(0, 0, 0, 0);
+	// 	background-position-x: 0%;
+	// 	background-position-y: 0%;
+	// 	background-repeat: repeat;
+	// 	background-size: auto;
+	// 	background-color: rgba(0, 0, 0, 0);
+	// 	background-position-x: 0%;
+	// 	background-position-y: 0%;
+	// 	background-repeat: repeat;
+	// 	background-size: auto;
+	// 	background-size: cover;
+	// 	background-position: 100%;
+	// 	background-repeat: no-repeat;
+	// 	background-color: #ececec;
+	// }
+.bg {
+	/* The image used */
+	background-image: url("../../assets/signup/back.png");
+  
+	/* Full height */
+	// height: 100%;
+  
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+  .box {
+    border-radius: 7px;
+    overflow: hidden;
+    margin-top: 12px !important;
+    border: 2px solid #f1f1f1;
+}
+  .errmsg{
+	display:block;
+	color:red;
+	margin-top:5px;
+  }
+  .design{
+	margin-top: 19%;
+  }
+  .subtitle{
+	color: black;
+	margin-top: 20px;
+  }
+  .bottom-text {
+	color: black;
+	font-size: 13px;
+	position: absolute;
+	bottom: 0;
+}
+  .sstitle{
+	color: black;
+	margin-top: 10px;
+	font-size: 16px;
+	margin-bottom: 0;
+  }
+  .bottext{
+	color:black;
+	font-size: 15px; 
+	margin-top: 0;
+	font-family: 'Nunito-Bold';
+  }
+  .bottomtext{
+	margin-top: 0;
+	font-size: 15px;
+	margin-bottom: 0;
+  }
+  .bottomtext a {
+	font-family: 'Nunito-Bold';
+}
+.nw_btn{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border-radius: 0;
+    font-family: 'Nunito-Bold';
+}
+}

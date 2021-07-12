@@ -1,0 +1,46 @@
+<ion-content padding class="back_img">
+  <div class="login_form_1">
+    <div class="login_form">
+      <div class="logo">
+        <img src="assets/imgs/seen/logo.png" />
+      </div>
+
+      <div text-right class="heading_login">
+        <h3>تسجيل الدخول</h3>
+        <p>يرجى ادخال البريد الالكتروني وكلمة السر</p>
+      </div>
+
+      <ion-list text-right>
+        <label class="label_name">البريد الالكتروني</label>
+        <ion-item class="input_1" no-padding>
+          <input [(ngModel)]="formData.email" type="email" placeholder="ادخل البريد الالكتروني" />
+        </ion-item>
+
+        <label class="label_name"> كلمة السر</label>
+        <ion-item class="input_1" no-padding>
+          <input [(ngModel)]="formData.password" type="password" placeholder="ادخل كلمة السر" />
+        </ion-item>
+      </ion-list>
+
+      <h5 style="text-align: right;font-size: 15px;font-weight: bold;color: #990cf8;" (click)="forgot()">
+        نسيت كلمة السر؟
+      </h5>
+
+      <div padding class="btn_grp">
+        <button ion-button block class="btn_cont" (click)="login()">
+          تسجيل دخول
+        </button>
+
+        <!--  <p><img src="assets/imgs/login/OR.png"></p> -->
+
+        <!-- <div class="img_sign">
+      <button ion-button clear full><img src="assets/imgs/login/facebook.png"></button>
+      <button ion-button clear full><img src="assets/imgs/login/google_plus.png"></button>
+    </div> -->
+
+        <p (click)="register()">ليس لديك حساب؟ <span>اشتراك
+          </span></p>
+      </div>
+    </div>
+  </div>
+</ion-content>

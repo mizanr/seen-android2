@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title *ngIf="!course">اضافة دورة</ion-title>
+    <ion-title *ngIf="course">تحديث الدورة</ion-title>
+    <ion-buttons start>
+      <button (click)="viewCtrl.dismiss()" ion-button clear icon-only>
+        <ion-icon color="danger" name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-buttons end>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+        <img src="assets/imgs/home/notification.png" height="16" />
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <div text-center> -->
+  <img (click)="getImage()" height="200px" margin-bottom style="object-fit:cover;border-radius:10px" width="100%"
+    *ngIf="formData.course_image" [src]="formData.course_image" />
+  <img (click)="getImage()" height="200px" margin-bottom style="object-fit:cover;border-radius:10px" width="100%"
+    *ngIf="!formData.course_image" src="../../assets/imgs/seen/imageupload.png" />
+
+  <!-- </div> -->
+
+  <ion-list>
+    <label class="label_name">اسم الدورة</label>
+    <ion-item class="input_1" no-padding>
+      <input type="text" [(ngModel)]="formData.course_title" placeholder="اكتب عنوان الدورة" />
+    </ion-item>
+
+    <label class="label_name">السعر بالدينار</label>
+    <ion-item class="input_1" no-padding (click)="custom_keypad('price')">
+      <!-- <input type="text"  placeholder="{{formData.price}}"  readonly/> -->
+      {{formData.price}}
+      <!-- <button clear ion-button></button> -->
+    </ion-item>
+
+    <ion-row>
+      <ion-col col-6>
+        <label class="label_name">المادة </label>
+        <ion-item class="input_1" no-padding>
+          <!-- <ion-label>Course Category</ion-label> -->
+          <ion-select placeholder="اختيار المادة" [(ngModel)]="formData.cat_id" okText="نعم" cancelText="إلغاء">
+            <ion-option *ngFor="let item of cateList" [value]="item.category_id">{{ item.category_name }}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <label class="label_name">المرحلة الدراسية</label>
+        <ion-item class="input_1" no-padding>
+          <!-- <ion-label>Educational Level</ion-label> -->
+          <ion-select placeholder="اختيار الصف الدراسي" [(ngModel)]="formData.level_id" okText="نعم" cancelText="إلغاء">
+            <ion-option *ngFor="let item of level" [value]="item.id">{{ item.title }}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <label class="label_name"> معلومات حول الدورة</label>
+    <ion-item class="input_1" no-padding>
+      <textarea [(ngModel)]="formData.course_description" type="text" placeholder="اضف الوصف هنا"></textarea>
+    </ion-item>
+
+    <!-- <label class="label_name">رابط Vimeo</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.youtube_link" type="url" placeholder="رابط Vimeo مضمن " />
+    </ion-item> -->
+
+    <label class="label_name"> مدة الدورة بالساعات</label>
+    <ion-item (click)="custom_keypad('duration')" class="input_1" no-padding>
+      <!-- <input [(ngModel)]="formData.duration" type="number" placeholder="ادخل عدد الساعات" pattern="[۰-۹]*" /> -->
+
+      {{formData.duration}}
+    </ion-item>
+
+    <div padding class="btn_grp">
+      <button (click)="addCourse()" *ngIf="!course" padding ion-button block class="btn_cont">اضافة دورة</button>
+      <button (click)="updateCourse()" *ngIf="course" padding ion-button block class="btn_cont">تحديث الدورة</button>
+    </div>
+
+    <!-- <h3 class="heading">Added Lession</h3>
+    <h5 class="heading_sub">Lession One</h5>
+
+    <ion-item no-lines no-padding class="lebel_nw">
+      <ion-avatar item-start>
+        <img src="assets/imgs/seen/detail_image.png" />
+      </ion-avatar>
+      <h2>Explanation of the lession</h2>
+      <p style="white-space: normal;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+
+      <div style="background-color: #0000;" class="btn_item">
+        <button
+          ion-button
+          small
+          class="btn_cont complete"
+          (click)="prev()"
+          item-start
+        >
+          View More
+        </button>
+        <button ion-button small class="btn_cont btn_pay" (click)="prev()">
+          Edit
+        </button>
+        <button ion-button small class="btn_cont complete" (click)="quiz()">
+          View Quiz
+        </button>
+      </div>
+    </ion-item>
+
+    <ion-row>
+      <ion-col col-7>
+        <label class="label_name"> Lession</label>
+        <ion-item class="input_1" no-padding>
+          <input type="text" placeholder="Lession Two" />
+        </ion-item>
+      </ion-col>
+      <ion-col col-5>
+        <div text-right>
+          <p (click)="addlession()">Add Lession</p>
+          <p (click)="quiz()">Add Quiz</p>
+        </div>
+      </ion-col>
+    </ion-row> -->
+  </ion-list>
+</ion-content>

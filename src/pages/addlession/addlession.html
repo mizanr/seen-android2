@@ -1,0 +1,80 @@
+<!-- <ion-header>
+  <ion-navbar color="light">
+    <ion-title>Add Lesson</ion-title>
+    <ion-buttons start>
+      <button (click)="viewCtrl.dismiss()" ion-button clear icon-only>
+        <ion-icon color="danger" name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> -->
+<ion-content padding>
+  <div class="login_form">
+    <button ion-button icon-only (click)="viewCtrl.dismiss()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <ion-list no-lines>
+
+      <h3 class="heading" *ngIf="!lesson" >اضافة درس</h3>
+      <h3 class="heading" *ngIf="lesson">تحديث الدرس</h3>
+
+    </ion-list>
+
+    <h3 class="" style="font-size: 15px;margin: 20px 0 0;">اختار الفصل الدراسي</h3>
+
+    <ion-item class="input_1" no-padding>
+      <ion-select [(ngModel)]="formData.chapter_id" placeholder="اختار الفصل الدراسي" okText="نعم" cancelText="إلغاء">
+        <ion-option *ngFor="let item of dataP.chapterList"  [value]="item.chapter_id">{{item.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-row>
+      <ion-col col-6>
+        <div class="img_upload">
+          <img *ngIf="!formData.lession_image"  (click)="getImage()" src="assets/imgs/seen/imageupload.png" />
+          <img *ngIf="formData.lession_image" (click)="getImage()" [src]="formData.lession_image" alt="">
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="img_upload">
+          <img *ngIf="!formData.lession_video" (click)="getVideo()"  src="assets/imgs/seen/videoupload.png" />
+          <video controls="controls" preload="metadata" webkit-playsinline="webkit-playsinline"
+          class="videoPlayer" *ngIf="formData.lession_video" [poster]="formData.video_thumbnail">
+          <source [src]="formData.lession_video" />
+        </video>
+        </div>
+        <div text-right>
+          <button style="background-image: linear-gradient(to right, #7551ce 0%, #9f00ff 100%);" (click)="getVideo()" *ngIf="!formData.lession_video" ion-button small>تحميل فيديو</button>
+          <button  style="background-image: linear-gradient(to right, #7551ce 0%, #9f00ff 100%);" (click)="getVideo()" *ngIf="formData.lession_video" ion-button small>تحديث الفيديو</button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+      <br />
+
+      <label class="label_name">عنوان الدرس</label>
+      <ion-item class="input_1" no-padding>
+        <input [(ngModel)]="formData.lession_name" type="text" placeholder="المحاضرة الاولى" />
+      </ion-item>
+
+      <!-- <label class="label_name">رابط Vimeo</label>
+      <ion-item class="input_1" no-padding>
+        <input [(ngModel)]="formData.youtube_link" type="url" placeholder="رابط Vimeo مضمن " />
+      </ion-item> -->
+
+      <label class="label_name">معلومات حول الدورة</label>
+      <ion-item class="" no-padding>
+        <textarea [(ngModel)]="formData.lession_description" rows="3" no-padding placeholder="اكتب هنا"></textarea>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button block class="btn_cont btn_cont_1" *ngIf="!lesson" (click)="add()">
+      اضافة
+    </button>
+    <button ion-button block class="btn_cont btn_cont_1" *ngIf="lesson"  (click)="update()">
+      تحديث
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-navbar text-right>
+    <ion-buttons ion-button clear style="margin:5px 0px 0px;padding: 0px;">
+      <ion-item no-lines style="background-color: #0000;">
+        <div class="heading_login">
+          <h3 style="font-size: 21px;">سوف تدخل كأستاذ</h3>
+          <p style="font-size: 14px; line-height: 10px;">
+            يرجى ادخال معلوماتك
+          </p>
+        </div>
+      </ion-item>
+    </ion-buttons>
+    <!--   <ion-title>You will login as Teacher</ion-title> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list text-right>
+    <label class="label_name">الاسم الكامل</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.fullname" type="text" placeholder="اسم الاستاذ الثلاثي" />
+    </ion-item>
+
+    <label class="label_name"> البريد الالكتروني</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.email" type="email" placeholder="email@seen-edu.com" />
+    </ion-item>
+
+    <label class="label_name">رقم الموبايل</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.phone" type="number" placeholder="+964 111 1111 111" pattern="[۰-۹]*" />
+    </ion-item>
+
+    <label class="label_name">اختار المادة </label>
+    <ion-item class="input_1" no-padding>
+      <!-- <ion-label>Chemistry</ion-label> -->
+      <ion-select placeholder="الانكليزي" [(ngModel)]="formData.subject" okText="نعم" cancelText="إلغاء">
+        <ion-option *ngFor="let item of subjectList" [value]="item.subject_id" text-capitalize>{{ item.subject_name }}
+        </ion-option>
+        <!-- <ion-option >Biology</ion-option>
+        <ion-option >Chemistry</ion-option>
+        <ion-option >English</ion-option> -->
+      </ion-select>
+    </ion-item>
+
+    <label class="label_name">اختار المحافظة</label>
+    <ion-item class="input_1" no-padding>
+      <ion-select placeholder="مدينة" (ionChange)="onChange()" [(ngModel)]="formData.city_id" okText="نعم"
+        cancelText="إلغاء">
+        <ion-option text-capitalize *ngFor="let item of allcity" [value]="item.id" text-capitalize>{{ item.name }}
+        </ion-option>
+      </ion-select>
+
+      <!-- <input
+        disabled
+        [(ngModel)]="formData.city_name"
+        type="email"
+        placeholder="California"
+      /> -->
+    </ion-item>
+
+    <label class="label_name">اختيار المدرسة</label>
+    <ion-item class="input_1" no-padding>
+      <!-- <input
+        [(ngModel)]="formData.school"
+        type="text"
+        placeholder="Thomas Jefferson High School for Scie..."
+      /> -->
+      <ion-select placeholder="المدرسة" okText="نعم" cancelText="إلغاء" (ionChange)="onSchoolChange()"
+        [disabled]="formData.city_id" [(ngModel)]="formData.school">
+        <ion-option text-capitalize *ngFor="let item of schoolList" [value]="item.school_id" text-capitalize>{{
+          item.school_name }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <label class="label_name"> كلمة السر</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.password" type="password" placeholder="*********" />
+    </ion-item>
+
+    <label class="label_name">تاكيد كلمة السر</label>
+    <ion-item class="input_1" no-padding>
+      <input [(ngModel)]="formData.confirm_password" type="password" placeholder="*********" />
+    </ion-item>
+
+
+    <!-- <ion-row align-items-center>
+      <ion-col no-padding col-auto>
+          <div class="check-box">
+              <ion-item style="width:auto">
+                  <ion-label style="margin-right:0">I agree to the </ion-label>
+                  <ion-checkbox color="dark" [(ngModel)]="formData.terms"></ion-checkbox>
+              </ion-item>
+          </div>
+      </ion-col>&nbsp;
+      <ion-col no-padding>
+          <button class="mybtn" ion-button clear color="secondary"
+              (click)="openTerms();$event.stopPropagation()">Terms and Conditions</button>
+      </ion-col>
+  </ion-row> -->
+
+    <ion-row align-items-center>
+      <ion-col text-right col-11 no-pading>
+        <p text-wrap>اوافق &nbsp; <strong style="color: #9513f3;"
+            (click)="terms('privacy');$event.stopPropagation()">الخصوصية,</strong>&nbsp;
+          <strong style="color: #9513f3;" (click)="terms('terms');$event.stopPropagation()">الاحكام والشروط.</strong>
+        </p>
+      </ion-col>
+      <ion-col col-1 no-padding>
+        <ion-checkbox [(ngModel)]="formData.terms" color="purple"></ion-checkbox>
+      </ion-col>
+
+    </ion-row>
+
+    <div padding class="btn_grp">
+      <button ion-button block class="btn_cont" (click)="signup()">
+        تسجيل 
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

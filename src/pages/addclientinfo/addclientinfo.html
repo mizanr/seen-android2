@@ -1,0 +1,101 @@
+<!--
+  Generated template for the AddclientinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-buttons start>
+			  <button ion-button clear icon-only style="margin:0px 10px;">
+		  <img src="assets/imgs/header/logo.png" height="30">
+		</button>
+  </ion-buttons>
+  <ion-title>ADD CLIENTS</ion-title>
+  <ion-buttons end>
+    <button ion-button (click)="notify()">
+    <img src="assets/imgs/home/notification.png" height="15">
+    </button>
+  </ion-buttons>
+  <ion-buttons end>
+    <button ion-button (click)="profile()">
+    <img src="assets/imgs/profile-user.png" height="22">
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding class="back_img">
+
+
+
+
+	<div class="login_form">
+
+	<ion-list no-margin>
+
+    <label>Client Name</label>
+	 <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+
+    <label>Client Phone Number</label>
+     <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+
+    <label>Client البريد الالكتروني</label>
+    <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+
+    <label>Address</label>
+    <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+
+    <label>Type of Customer</label>
+    <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+
+    <label>IBAN Number</label>
+    <ion-item class="input_1" no-lines>
+      <input type="email" placeholder="">
+    </ion-item>
+
+    <label>Add Description</label>
+    <ion-item class="input_1" no-lines>
+      <textarea rows="6"></textarea>
+    </ion-item>
+
+    <div class="logo">
+      <h4>Other Contact Person</h4>
+    </div>
+
+    <label>Name</label>
+    <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+    <label>Phone Number</label>
+    <ion-item class="input_1" no-lines>
+      <input type="text" placeholder="">
+    </ion-item>
+
+  </ion-list>
+
+  <div padding class="btn_grp">
+    <button ion-button color="primary" (click)="member()">Add</button>
+  </div>
+  </div>
+
+
+
+</ion-content>

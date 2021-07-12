@@ -1,0 +1,124 @@
+<!--
+  Generated template for the AddclientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  
+
+
+  <div class="login_form">
+
+    <button ion-button icon-only (click)="closemodal()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    
+  
+    <ion-list no-lines>
+
+      <h3 class="heading">ADD NEW CLIENT</h3>
+
+      <label>Client Name</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+      <label>ID</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+      <label>Client Type</label>
+            <ion-item class="input_1" no-lines style="background: #f1f1f1; border-radius:5px;"> 
+              <ion-label>Client type</ion-label>
+              <ion-select [(ngModel)]="os" okText="نعم" cancelText="إلغاء">
+                <ion-option value="dos">Lorem ipsum</ion-option>
+                <ion-option value="lunix">Lorem ipsum</ion-option>
+                <ion-option value="mac7">Lorem ipsum</ion-option>
+                <ion-option value="mac8">Lorem ipsum</ion-option>
+                <ion-option value="win3.1">Lorem ipsum</ion-option>
+                <ion-option value="win95">Lorem ipsum</ion-option>
+                <ion-option value="win98">Lorem ipsum</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <label>Billing Address</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="Billing Address">
+      </ion-item>
+
+      <label>Shipping Address</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="Shipping Address">
+      </ion-item>
+
+      <label>Phone Number</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+    
+      <label>Client Email</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+
+      <ion-row>
+        <ion-col col-10>
+          <label>Location</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <label style="color: #fff;">l</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <button ion-button clear style="height: auto;">
+          <img src="assets/imgs/footer/location-active.png" width="30px">
+        </button>
+      </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <label>iban</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+     
+      
+
+      <ion-item no-padding> 
+        <h3 class="nw_heading">Other Contact Person</h3>
+        <button ion-button item-end clear style="height: auto;">
+          <img src="assets/imgs/plus.png" width="20px">
+        </button>
+      </ion-item>
+
+      <label>Name</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+      <label>Phone Number</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="">
+      </ion-item>
+
+    </ion-list>
+
+
+   
+
+    <ion-row style="justify-content: center;" no-padding>
+      <ion-col col-4>
+        <button ion-button color="primary" block>Add</button>
+      </ion-col>
+     
+    </ion-row>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,71 @@
+<!--
+  Generated template for the ClientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-buttons start>
+			  <button ion-button clear icon-only style="margin:0px 10px;">
+		  <img src="assets/imgs/header/logo.png" height="30">
+		</button>
+  </ion-buttons>
+  <ion-title>CLIENTS</ion-title>
+  <!-- <ion-buttons end>
+    <button ion-button> 
+    <img src="assets/imgs/addclient.png" height="17">
+    </button>
+  </ion-buttons> -->
+
+  <!-- <ion-buttons end>
+    <button ion-button (click)="notify()"> 
+    <img src="assets/imgs/home/notification.png" height="15">
+    </button>
+  </ion-buttons> -->
+
+
+  <ion-buttons end>
+    <button ion-button (click)="profile()">
+    <img src="assets/imgs/profile-user.png" height="22">
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content>
+
+  
+  <ion-item class="filter_item" no-lines> 
+    
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="" no-lines></ion-searchbar>
+    <button ion-button item-end clear menuToggle>
+      <img src="assets/imgs/filter.png" height="35">
+    </button>
+    
+</ion-item>
+
+  <div class="user" *ngFor="let k of [1,2,3,4,5]" (click)="details()">
+    <ion-row>
+         <ion-col col-12 no-padding>
+           <ion-item no-lines>
+            <h6 class="heading_int">Client Name</h6>
+            <p><img src="assets/imgs/home/location-active.png">315, Pukhraj Corporate, indore</p>
+            <p class="color">Client Type</p>
+            <p class="color color_2"><img src="assets/imgs/home/phone.png"><span>+91524658452</span> John Smith</p>
+            <p class="color color_2"><img src="assets/imgs/home/phone.png"><span>+91524658452</span> John Smith</p>
+            <p class="color color_2"><img src="assets/imgs/home/phone.png"><span>+91524658452</span> John Smith</p>
+           
+            <!-- <button ion-button color="primary" small style="border-radius: 0;font-size: 12px;" ><img src="assets/imgs/check.png"> Mark as complete</button>
+            <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;">next visit</button>
+            <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;">Place order</button> -->
+            
+    </ion-item>
+  </ion-col>
+</ion-row>
+    </div>
+
+    <ion-fab center bottom  (click)="add()">
+      <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>
